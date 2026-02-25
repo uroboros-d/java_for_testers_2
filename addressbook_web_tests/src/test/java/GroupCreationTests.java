@@ -1,10 +1,7 @@
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.Map;
@@ -27,7 +24,9 @@ public class GroupCreationTests {
 
     @Test
     public void canCreateGroup() {
-        driver.findElement(By.linkText("groups")).click();
+        if (! isElementPresent(By.name("new"))) {
+            driver.findElement(By.linkText("groups")).click();
+        }
         driver.findElement(By.name("new")).click();
         driver.findElement(By.name("group_name")).sendKeys("group");
         driver.findElement(By.name("group_header")).sendKeys("header");
@@ -38,6 +37,9 @@ public class GroupCreationTests {
 
     @Test
     public void canCreateGroupWithEmptyName() {
+        if (! isElementPresent(By.name("new"))) {
+            driver.findElement(By.linkText("groups")).click();
+        }
         driver.findElement(By.linkText("groups")).click();
         driver.findElement(By.name("new")).click();
         driver.findElement(By.name("group_name")).sendKeys("");
@@ -45,5 +47,14 @@ public class GroupCreationTests {
         driver.findElement(By.name("group_footer")).sendKeys("");
         driver.findElement(By.name("submit")).click();
         driver.findElement(By.linkText("group page")).click();
+    }
+
+    private boolean isElementPresent(By locator) {
+        try {
+            driver.findElement(locator);
+            return true;
+        } catch (NoSuchElementException exception) {
+            return false;
+        }
     }
 }
