@@ -10,9 +10,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import java.util.Map;
 
 public class GroupCreationTests {
-    private WebDriver driver;
-    private Map<String, Object> vars;
-    JavascriptExecutor js;
+    private static WebDriver driver;
 
     @BeforeEach
     public void setUp() {
@@ -39,6 +37,17 @@ public class GroupCreationTests {
         driver.findElement(By.name("group_name")).sendKeys("group");
         driver.findElement(By.name("group_header")).sendKeys("header");
         driver.findElement(By.name("group_footer")).sendKeys("footer");
+        driver.findElement(By.name("submit")).click();
+        driver.findElement(By.linkText("group page")).click();
+    }
+
+    @Test
+    public void canCreateGroupWithEmptyName() {
+        driver.findElement(By.linkText("groups")).click();
+        driver.findElement(By.name("new")).click();
+        driver.findElement(By.name("group_name")).sendKeys("");
+        driver.findElement(By.name("group_header")).sendKeys("");
+        driver.findElement(By.name("group_footer")).sendKeys("");
         driver.findElement(By.name("submit")).click();
         driver.findElement(By.linkText("group page")).click();
     }
