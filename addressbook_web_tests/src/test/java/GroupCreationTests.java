@@ -7,7 +7,6 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import java.util.HashMap;
 import java.util.Map;
 
 public class GroupCreationTests {
@@ -18,22 +17,23 @@ public class GroupCreationTests {
     @BeforeEach
     public void setUp() {
         driver = new FirefoxDriver();
-        js = (JavascriptExecutor) driver;
-        vars = new HashMap<String, Object>();
-    }
-
-    @AfterEach
-    public void tearDown() {
-        driver.quit();
-    }
-
-    @Test
-    public void test() {
         driver.get("https://localhost/addressbook/index.php");
         driver.manage().window().setSize(new Dimension(862, 688));
         driver.findElement(By.name("user")).sendKeys("admin");
         driver.findElement(By.name("pass")).sendKeys("secret");
         driver.findElement(By.xpath("//input[@value=\'Login\']")).click();
+    }
+
+    @AfterEach
+    public void tearDown() {
+        // логаут нет смысла выполнять - это случится автоматически при выполнении след команды
+        // - закрытия браузера, поэтому пока его закомментируем
+//        driver.findElement(By.linkText("Logout")).click();
+        driver.quit();
+    }
+
+    @Test
+    public void canCreateGroup() {
         driver.findElement(By.linkText("groups")).click();
         driver.findElement(By.name("new")).click();
         driver.findElement(By.name("group_name")).sendKeys("group");
@@ -41,6 +41,5 @@ public class GroupCreationTests {
         driver.findElement(By.name("group_footer")).sendKeys("footer");
         driver.findElement(By.name("submit")).click();
         driver.findElement(By.linkText("group page")).click();
-        driver.findElement(By.linkText("Logout")).click();
     }
 }
