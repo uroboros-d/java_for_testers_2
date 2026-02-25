@@ -14,20 +14,15 @@ public class GroupCreationTests {
 
     @BeforeEach
     public void setUp() {
-        driver = new FirefoxDriver();
-        driver.get("https://localhost/addressbook/index.php");
-        driver.manage().window().setSize(new Dimension(862, 688));
-        driver.findElement(By.name("user")).sendKeys("admin");
-        driver.findElement(By.name("pass")).sendKeys("secret");
-        driver.findElement(By.xpath("//input[@value=\'Login\']")).click();
-    }
-
-    @AfterEach
-    public void tearDown() {
-        // логаут нет смысла выполнять - это случится автоматически при выполнении след команды
-        // - закрытия браузера, поэтому пока его закомментируем
-//        driver.findElement(By.linkText("Logout")).click();
-        driver.quit();
+        if (driver == null) {
+            driver = new FirefoxDriver();
+            Runtime.getRuntime().addShutdownHook(new Thread(driver::quit));
+            driver.get("https://localhost/addressbook/index.php");
+            driver.manage().window().setSize(new Dimension(862, 688));
+            driver.findElement(By.name("user")).sendKeys("admin");
+            driver.findElement(By.name("pass")).sendKeys("secret");
+            driver.findElement(By.xpath("//input[@value=\'Login\']")).click();
+        }
     }
 
     @Test
