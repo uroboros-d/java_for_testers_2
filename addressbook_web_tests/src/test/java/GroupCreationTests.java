@@ -1,10 +1,7 @@
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
-
-import java.util.Map;
 
 public class GroupCreationTests {
     private static WebDriver driver;
@@ -16,7 +13,9 @@ public class GroupCreationTests {
             Runtime.getRuntime().addShutdownHook(new Thread(driver::quit));
             driver.get("https://localhost/addressbook/index.php");
             driver.manage().window().setSize(new Dimension(862, 688));
+            driver.findElement(By.name("user")).click();
             driver.findElement(By.name("user")).sendKeys("admin");
+            driver.findElement(By.name("pass")).click();
             driver.findElement(By.name("pass")).sendKeys("secret");
             driver.findElement(By.xpath("//input[@value=\'Login\']")).click();
         }
