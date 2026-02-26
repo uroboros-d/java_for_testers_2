@@ -5,11 +5,9 @@ public class GroupRemovalTests extends TestBase{
 
     @Test
     public void canRemoveGroup() {
-        if (! isElementPresent(By.name("new"))) {
-            driver.findElement(By.linkText("groups")).click();
-        }
+        openGroupsPage();
         if (! isElementPresent(By.name("selected[]"))) {
-            createGroup("", "", "");
+            createGroup( "", "", "");
         }
         driver.findElement(By.name("selected[]")).click();
         driver.findElement(By.name("delete")).click();

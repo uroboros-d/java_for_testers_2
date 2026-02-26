@@ -40,4 +40,10 @@ public class TestBase {
         driver.findElement(By.name("submit")).click();
         driver.findElement(By.linkText("group page")).click();
     }
+
+    protected void openGroupsPage() {
+        if (! isElementPresent(By.name("new"))) {
+            driver.findElement(By.linkText("groups")).click();
+        }
+    }
 }
