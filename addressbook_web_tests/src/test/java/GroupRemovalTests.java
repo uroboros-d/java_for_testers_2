@@ -2,6 +2,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -25,10 +26,21 @@ public class GroupRemovalTests {
 
     @Test
     public void canRemoveGroup() {
-        driver.findElement(By.linkText("groups")).click();
+        if (! isElementPresent(By.name("new"))) {
+            driver.findElement(By.linkText("groups")).click();
+        }
         driver.findElement(By.name("selected[]")).click();
         driver.findElement(By.name("delete")).click();
         driver.findElement(By.linkText("group page")).click();
         driver.findElement(By.linkText("Logout")).click();
+    }
+
+    private boolean isElementPresent(By locator) {
+        try {
+            driver.findElement(locator);
+            return true;
+        } catch (NoSuchElementException exception) {
+            return false;
+        }
     }
 }
