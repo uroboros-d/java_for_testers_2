@@ -10,6 +10,5 @@ public class GroupRemovalTests extends TestBase{
             createGroup( "", "", "");
         }
         removeGroup();
-        driver.findElement(By.linkText("Logout")).click();
     }
 }
