@@ -9,9 +9,13 @@ public class GroupRemovalTests extends TestBase{
         if (! isElementPresent(By.name("selected[]"))) {
             createGroup( "", "", "");
         }
+        removeGroup();
+        driver.findElement(By.linkText("Logout")).click();
+    }
+
+    private static void removeGroup() {
         driver.findElement(By.name("selected[]")).click();
         driver.findElement(By.name("delete")).click();
         driver.findElement(By.linkText("group page")).click();
-        driver.findElement(By.linkText("Logout")).click();
     }
 }
