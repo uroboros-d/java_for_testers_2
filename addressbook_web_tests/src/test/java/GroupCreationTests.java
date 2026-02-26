@@ -19,12 +19,4 @@ public class GroupCreationTests extends TestBase{
         createGroup("", "", "");
     }
 
-    private static void createGroup(String group, String header, String footer) {
-        driver.findElement(By.name("new")).click();
-        driver.findElement(By.name("group_name")).sendKeys(group);
-        driver.findElement(By.name("group_header")).sendKeys(header);
-        driver.findElement(By.name("group_footer")).sendKeys(footer);
-        driver.findElement(By.name("submit")).click();
-        driver.findElement(By.linkText("group page")).click();
-    }
 }
