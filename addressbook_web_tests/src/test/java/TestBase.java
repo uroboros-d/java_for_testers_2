@@ -8,6 +8,12 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class TestBase {
     protected static WebDriver driver;
 
+    protected static void removeGroup() {
+        driver.findElement(By.name("selected[]")).click();
+        driver.findElement(By.name("delete")).click();
+        driver.findElement(By.linkText("group page")).click();
+    }
+
     @BeforeEach
     public void setUp() {
         if (driver == null) {
@@ -45,5 +51,9 @@ public class TestBase {
         if (! isElementPresent(By.name("new"))) {
             driver.findElement(By.linkText("groups")).click();
         }
+    }
+
+    protected boolean isGroupPresent() {
+        return isElementPresent(By.name("selected[]"));
     }
 }
