@@ -6,13 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class TestBase {
-    protected static WebDriver driver;
 
-    protected static void removeGroup() {
-        driver.findElement(By.name("selected[]")).click();
-        driver.findElement(By.name("delete")).click();
-        driver.findElement(By.linkText("group page")).click();
-    }
+    protected static WebDriver driver;
 
     @BeforeEach
     public void setUp() {
@@ -40,10 +35,19 @@ public class TestBase {
 
     protected void createGroup(String group, String header, String footer) {
         driver.findElement(By.name("new")).click();
+        driver.findElement(By.name("group_name")).click();
         driver.findElement(By.name("group_name")).sendKeys(group);
+        driver.findElement(By.name("group_header")).click();
         driver.findElement(By.name("group_header")).sendKeys(header);
+        driver.findElement(By.name("group_footer")).click();
         driver.findElement(By.name("group_footer")).sendKeys(footer);
         driver.findElement(By.name("submit")).click();
+        driver.findElement(By.linkText("group page")).click();
+    }
+
+    protected static void removeGroup() {
+        driver.findElement(By.name("selected[]")).click();
+        driver.findElement(By.name("delete")).click();
         driver.findElement(By.linkText("group page")).click();
     }
 
