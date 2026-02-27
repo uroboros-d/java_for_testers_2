@@ -21,11 +21,15 @@ public class ApplicationManager {
             driver.get("https://localhost/addressbook/index.php");
             driver.manage().window().setSize(new Dimension(862, 688));
             driver.findElement(By.name("user")).click();
-            driver.findElement(By.name("user")).sendKeys("admin");
-            driver.findElement(By.name("pass")).click();
-            driver.findElement(By.name("pass")).sendKeys("secret");
-            driver.findElement(By.xpath("//input[@value=\'Login\']")).click();
+            login("admin", "secret");
         }
+    }
+
+    private static void login(String user, String pass) {
+        driver.findElement(By.name("user")).sendKeys(user);
+        driver.findElement(By.name("pass")).click();
+        driver.findElement(By.name("pass")).sendKeys(pass);
+        driver.findElement(By.xpath("//input[@value=\'Login\']")).click();
     }
 
     public  LoginHelper session() {
