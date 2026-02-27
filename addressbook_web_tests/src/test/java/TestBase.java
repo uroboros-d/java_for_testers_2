@@ -9,10 +9,14 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class TestBase {
 
+    protected static ApplicationManager app;
     protected static WebDriver driver;
 
     @BeforeEach
     public void setUp() {
+        if (app == null) {
+            app = new ApplicationManager();
+        }
         if (driver == null) {
             driver = new FirefoxDriver();
             Runtime.getRuntime().addShutdownHook(new Thread(driver::quit));
@@ -26,7 +30,7 @@ public class TestBase {
         }
     }
 
-    protected static void createContact(Contact contact) {
+    protected void createContact(Contact contact) {
         driver.findElement(By.name("firstname")).click();
         driver.findElement(By.name("firstname")).sendKeys(contact.firstname());
         driver.findElement(By.name("lastname")).click();
@@ -37,7 +41,7 @@ public class TestBase {
         driver.findElement(By.linkText("home page")).click();
     }
 
-    protected static void removeContact() {
+    protected void removeContact() {
         driver.findElement(By.name("selected[]")).click();
         driver.findElement(By.cssSelector("input[value='Delete']")).click();
         driver.findElement(By.linkText("home page")).click();
@@ -55,7 +59,7 @@ public class TestBase {
         driver.findElement(By.linkText("group page")).click();
     }
 
-    protected static void removeGroup() {
+    protected void removeGroup() {
         driver.findElement(By.name("selected[]")).click();
         driver.findElement(By.name("delete")).click();
         driver.findElement(By.linkText("group page")).click();
