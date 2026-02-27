@@ -6,7 +6,10 @@ public class GroupCreationTests extends TestBase{
     @Test
     public void canCreateGroup() {
         openGroupsPage();
-        createGroup(new Group("group", "header", "footer"));
+        createGroup(new Group()
+                .withName("name/header/footer")
+                .withHeader("header")
+                .withFooter("footer"));
     }
 
     @Test
@@ -18,6 +21,6 @@ public class GroupCreationTests extends TestBase{
     @Test
     public void canCreateGroupWithNameOnly() {
         openGroupsPage();
-        createGroup(new Group().withName("name"));
+        createGroup(new Group().withName("nameOnly"));
     }
 }
