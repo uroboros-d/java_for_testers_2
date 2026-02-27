@@ -17,6 +17,10 @@ public class TestBase {
         if (app == null) {
             app = new ApplicationManager();
         }
+        init();
+    }
+
+    private static void init() {
         if (driver == null) {
             driver = new FirefoxDriver();
             Runtime.getRuntime().addShutdownHook(new Thread(driver::quit));
