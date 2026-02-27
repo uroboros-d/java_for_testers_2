@@ -1,3 +1,5 @@
+package manager;
+
 import model.Contact;
 import model.Group;
 import org.openqa.selenium.By;
@@ -10,7 +12,7 @@ public class ApplicationManager {
 
     protected static WebDriver driver;
 
-    protected void init() {
+    public void init() {
         if (driver == null) {
             driver = new FirefoxDriver();
             Runtime.getRuntime().addShutdownHook(new Thread(driver::quit));
@@ -24,7 +26,7 @@ public class ApplicationManager {
         }
     }
 
-    protected boolean isElementPresent(By locator) {
+    public boolean isElementPresent(By locator) {
         try {
             driver.findElement(locator);
             return true;
@@ -33,7 +35,7 @@ public class ApplicationManager {
         }
     }
 
-    protected void createGroup(Group group) {
+    public void createGroup(Group group) {
         driver.findElement(By.name("new")).click();
         driver.findElement(By.name("group_name")).click();
         driver.findElement(By.name("group_name")).sendKeys(group.name());
@@ -45,23 +47,23 @@ public class ApplicationManager {
         driver.findElement(By.linkText("group page")).click();
     }
 
-    protected void openGroupsPage() {
+    public void openGroupsPage() {
         if (! isElementPresent(By.name("new"))) {
             driver.findElement(By.linkText("groups")).click();
         }
     }
 
-    protected boolean isGroupPresent() {
+    public boolean isGroupPresent() {
         return isElementPresent(By.name("selected[]"));
     }
 
-    protected void removeGroup() {
+    public void removeGroup() {
         driver.findElement(By.name("selected[]")).click();
         driver.findElement(By.name("delete")).click();
         driver.findElement(By.linkText("group page")).click();
     }
 
-    protected void createContact(Contact contact) {
+    public void createContact(Contact contact) {
         driver.findElement(By.name("firstname")).click();
         driver.findElement(By.name("firstname")).sendKeys(contact.firstname());
         driver.findElement(By.name("lastname")).click();
@@ -72,23 +74,23 @@ public class ApplicationManager {
         driver.findElement(By.linkText("home page")).click();
     }
 
-    protected void removeContact() {
+    public void removeContact() {
         driver.findElement(By.name("selected[]")).click();
         driver.findElement(By.cssSelector("input[value='Delete']")).click();
         driver.findElement(By.linkText("home page")).click();
     }
 
-    protected void openAddNewPage() {
+    public void openAddNewPage() {
         if (!isElementPresent(By.name("firstname"))) {
             driver.findElement(By.linkText("add new")).click();
         }
     }
 
-    protected boolean isContactPresent() {
+    public boolean isContactPresent() {
         return isElementPresent(By.name("selected[]"));
     }
 
-    protected void openHomePage() {
+    public void openHomePage() {
         if (! isElementPresent(By.cssSelector("input[value='Delete']"))) {
             driver.findElement(By.linkText("home")).click();
         }
