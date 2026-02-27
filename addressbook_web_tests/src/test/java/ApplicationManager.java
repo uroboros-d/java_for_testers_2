@@ -71,4 +71,26 @@ public class ApplicationManager {
         driver.findElement(By.name("submit")).click();
         driver.findElement(By.linkText("home page")).click();
     }
+
+    protected void removeContact() {
+        driver.findElement(By.name("selected[]")).click();
+        driver.findElement(By.cssSelector("input[value='Delete']")).click();
+        driver.findElement(By.linkText("home page")).click();
+    }
+
+    protected void openAddNewPage() {
+        if (!isElementPresent(By.name("firstname"))) {
+            driver.findElement(By.linkText("add new")).click();
+        }
+    }
+
+    protected boolean isContactPresent() {
+        return isElementPresent(By.name("selected[]"));
+    }
+
+    protected void openHomePage() {
+        if (! isElementPresent(By.cssSelector("input[value='Delete']"))) {
+            driver.findElement(By.linkText("home")).click();
+        }
+    }
 }

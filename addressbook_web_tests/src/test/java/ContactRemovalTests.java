@@ -5,11 +5,11 @@ public class ContactRemovalTests  extends TestBase {
 
         @Test
         public void canRemoveContact() {
-            openHomePage();
-            if (!isContactPresent()) {
-                openAddNewPage();
+            app.openHomePage();
+            if (!app.isContactPresent()) {
+                app.openAddNewPage();
                 app.createContact(new Contact());
             }
-            removeContact();
+            app.removeContact();
         }
 }
