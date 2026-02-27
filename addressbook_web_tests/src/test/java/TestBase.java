@@ -14,17 +14,6 @@ public class TestBase {
         app.init();
     }
 
-    protected void createContact(Contact contact) {
-        ApplicationManager.driver.findElement(By.name("firstname")).click();
-        ApplicationManager.driver.findElement(By.name("firstname")).sendKeys(contact.firstname());
-        ApplicationManager.driver.findElement(By.name("lastname")).click();
-        ApplicationManager.driver.findElement(By.name("lastname")).sendKeys(contact.lastname());
-        ApplicationManager.driver.findElement(By.name("address")).click();
-        ApplicationManager.driver.findElement(By.name("address")).sendKeys(contact.address());
-        ApplicationManager.driver.findElement(By.name("submit")).click();
-        ApplicationManager.driver.findElement(By.linkText("home page")).click();
-    }
-
     protected void removeContact() {
         ApplicationManager.driver.findElement(By.name("selected[]")).click();
         ApplicationManager.driver.findElement(By.cssSelector("input[value='Delete']")).click();

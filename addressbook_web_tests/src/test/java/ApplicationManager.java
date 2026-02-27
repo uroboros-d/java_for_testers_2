@@ -1,3 +1,4 @@
+import model.Contact;
 import model.Group;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
@@ -58,5 +59,16 @@ public class ApplicationManager {
         driver.findElement(By.name("selected[]")).click();
         driver.findElement(By.name("delete")).click();
         driver.findElement(By.linkText("group page")).click();
+    }
+
+    protected void createContact(Contact contact) {
+        driver.findElement(By.name("firstname")).click();
+        driver.findElement(By.name("firstname")).sendKeys(contact.firstname());
+        driver.findElement(By.name("lastname")).click();
+        driver.findElement(By.name("lastname")).sendKeys(contact.lastname());
+        driver.findElement(By.name("address")).click();
+        driver.findElement(By.name("address")).sendKeys(contact.address());
+        driver.findElement(By.name("submit")).click();
+        driver.findElement(By.linkText("home page")).click();
     }
 }

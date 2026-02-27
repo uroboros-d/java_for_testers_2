@@ -8,7 +8,7 @@ public class ContactRemovalTests  extends TestBase {
             openHomePage();
             if (!isContactPresent()) {
                 openAddNewPage();
-                createContact(new Contact());
+                app.createContact(new Contact());
             }
             removeContact();
         }
