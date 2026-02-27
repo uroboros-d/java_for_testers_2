@@ -1,106 +1,59 @@
 import model.Contact;
-import model.Group;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class TestBase {
 
     protected static ApplicationManager app;
-    protected static WebDriver driver;
 
     @BeforeEach
     public void setUp() {
         if (app == null) {
             app = new ApplicationManager();
         }
-        init();
-    }
-
-    private static void init() {
-        if (driver == null) {
-            driver = new FirefoxDriver();
-            Runtime.getRuntime().addShutdownHook(new Thread(driver::quit));
-            driver.get("https://localhost/addressbook/index.php");
-            driver.manage().window().setSize(new Dimension(862, 688));
-            driver.findElement(By.name("user")).click();
-            driver.findElement(By.name("user")).sendKeys("admin");
-            driver.findElement(By.name("pass")).click();
-            driver.findElement(By.name("pass")).sendKeys("secret");
-            driver.findElement(By.xpath("//input[@value=\'Login\']")).click();
-        }
+        app.init();
     }
 
     protected void createContact(Contact contact) {
-        driver.findElement(By.name("firstname")).click();
-        driver.findElement(By.name("firstname")).sendKeys(contact.firstname());
-        driver.findElement(By.name("lastname")).click();
-        driver.findElement(By.name("lastname")).sendKeys(contact.lastname());
-        driver.findElement(By.name("address")).click();
-        driver.findElement(By.name("address")).sendKeys(contact.address());
-        driver.findElement(By.name("submit")).click();
-        driver.findElement(By.linkText("home page")).click();
+        ApplicationManager.driver.findElement(By.name("firstname")).click();
+        ApplicationManager.driver.findElement(By.name("firstname")).sendKeys(contact.firstname());
+        ApplicationManager.driver.findElement(By.name("lastname")).click();
+        ApplicationManager.driver.findElement(By.name("lastname")).sendKeys(contact.lastname());
+        ApplicationManager.driver.findElement(By.name("address")).click();
+        ApplicationManager.driver.findElement(By.name("address")).sendKeys(contact.address());
+        ApplicationManager.driver.findElement(By.name("submit")).click();
+        ApplicationManager.driver.findElement(By.linkText("home page")).click();
     }
 
     protected void removeContact() {
-        driver.findElement(By.name("selected[]")).click();
-        driver.findElement(By.cssSelector("input[value='Delete']")).click();
-        driver.findElement(By.linkText("home page")).click();
-    }
-
-    protected void createGroup(Group group) {
-        driver.findElement(By.name("new")).click();
-        driver.findElement(By.name("group_name")).click();
-        driver.findElement(By.name("group_name")).sendKeys(group.name());
-        driver.findElement(By.name("group_header")).click();
-        driver.findElement(By.name("group_header")).sendKeys(group.header());
-        driver.findElement(By.name("group_footer")).click();
-        driver.findElement(By.name("group_footer")).sendKeys(group.footer());
-        driver.findElement(By.name("submit")).click();
-        driver.findElement(By.linkText("group page")).click();
+        ApplicationManager.driver.findElement(By.name("selected[]")).click();
+        ApplicationManager.driver.findElement(By.cssSelector("input[value='Delete']")).click();
+        ApplicationManager.driver.findElement(By.linkText("home page")).click();
     }
 
     protected void removeGroup() {
-        driver.findElement(By.name("selected[]")).click();
-        driver.findElement(By.name("delete")).click();
-        driver.findElement(By.linkText("group page")).click();
-    }
-
-    protected boolean isElementPresent(By locator) {
-        try {
-            driver.findElement(locator);
-            return true;
-        } catch (NoSuchElementException exception) {
-            return false;
-        }
-    }
-
-    protected void openGroupsPage() {
-        if (! isElementPresent(By.name("new"))) {
-            driver.findElement(By.linkText("groups")).click();
-        }
+        ApplicationManager.driver.findElement(By.name("selected[]")).click();
+        ApplicationManager.driver.findElement(By.name("delete")).click();
+        ApplicationManager.driver.findElement(By.linkText("group page")).click();
     }
 
     protected boolean isGroupPresent() {
-        return isElementPresent(By.name("selected[]"));
+        return app.isElementPresent(By.name("selected[]"));
     }
 
     protected void openAddNewPage() {
-        if (!isElementPresent(By.name("firstname"))) {
-            driver.findElement(By.linkText("add new")).click();
+        if (!app.isElementPresent(By.name("firstname"))) {
+            ApplicationManager.driver.findElement(By.linkText("add new")).click();
         }
     }
 
     protected boolean isContactPresent() {
-        return isElementPresent(By.name("selected[]"));
+        return app.isElementPresent(By.name("selected[]"));
     }
 
     protected void openHomePage() {
-        if (! isElementPresent(By.cssSelector("input[value='Delete']"))) {
-            driver.findElement(By.linkText("home")).click();
+        if (! app.isElementPresent(By.cssSelector("input[value='Delete']"))) {
+            ApplicationManager.driver.findElement(By.linkText("home")).click();
         }
     }
 }
