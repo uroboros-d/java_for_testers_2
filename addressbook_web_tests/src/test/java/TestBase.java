@@ -31,16 +31,6 @@ public class TestBase {
         ApplicationManager.driver.findElement(By.linkText("home page")).click();
     }
 
-    protected void removeGroup() {
-        ApplicationManager.driver.findElement(By.name("selected[]")).click();
-        ApplicationManager.driver.findElement(By.name("delete")).click();
-        ApplicationManager.driver.findElement(By.linkText("group page")).click();
-    }
-
-    protected boolean isGroupPresent() {
-        return app.isElementPresent(By.name("selected[]"));
-    }
-
     protected void openAddNewPage() {
         if (!app.isElementPresent(By.name("firstname"))) {
             ApplicationManager.driver.findElement(By.linkText("add new")).click();
