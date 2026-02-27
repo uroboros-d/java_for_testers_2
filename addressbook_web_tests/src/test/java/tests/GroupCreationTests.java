@@ -1,3 +1,5 @@
+package tests;
+
 import model.Group;
 import org.junit.jupiter.api.Test;
 

@@ -1,3 +1,5 @@
+package tests;
+
 import model.Contact;
 import org.junit.jupiter.api.Test;
 
