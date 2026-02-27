@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1ed3a8ec-fdf5-4c8b-a0e5-d0fe04cce3cd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/addressbook_web_tests/src/test/java/ContactRemovalTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/addressbook_web_tests/src/test/java/ContactCreationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook_web_tests/src/test/java/ContactCreationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/src/test/java/GroupRemovalTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook_web_tests/src/test/java/GroupRemovalTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/src/test/java/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook_web_tests/src/test/java/TestBase.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +79,9 @@
     "Gradle.ContactCreationTests.canCreateContact.executor": "Run",
     "Gradle.ContactCreationTests.canCreateContactWithEmptyProperties.executor": "Run",
     "Gradle.ContactCreationTests.canCreateContactWithNameOnly.executor": "Run",
+    "Gradle.ContactCreationTests.executor": "Run",
+    "Gradle.ContactRemovalTests.canRemoveContact.executor": "Run",
+    "Gradle.ContactRemovalTests.executor": "Run",
     "Gradle.GroupCreationTests.canCreateGroupWithNameOnly.executor": "Run",
     "Gradle.GroupCreationTests.executor": "Run",
     "Gradle.GroupCreationTests.test.executor": "Run",
@@ -91,8 +98,8 @@
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
-  <component name="RunManager" selected="Gradle.ContactCreationTests.canCreateContactWithNameOnly">
-    <configuration name="ContactCreationTests.canCreateContact" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.ContactRemovalTests">
+    <configuration name="ContactCreationTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/addressbook_web_tests" />
@@ -105,7 +112,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ContactCreationTests.canCreateContact&quot;" />
+            <option value="&quot;ContactCreationTests&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -164,7 +171,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="GroupCreationTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ContactRemovalTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/addressbook_web_tests" />
@@ -177,7 +184,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;GroupCreationTests&quot;" />
+            <option value="&quot;ContactRemovalTests&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -188,7 +195,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="Tests in 'addressbook_web_tests.test'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ContactRemovalTests.canRemoveContact" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/addressbook_web_tests" />
@@ -200,6 +207,8 @@
         <option name="taskNames">
           <list>
             <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;ContactRemovalTests.canRemoveContact&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -212,11 +221,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.ContactRemovalTests" />
+        <item itemvalue="Gradle.ContactRemovalTests.canRemoveContact" />
+        <item itemvalue="Gradle.ContactCreationTests" />
         <item itemvalue="Gradle.ContactCreationTests.canCreateContactWithNameOnly" />
         <item itemvalue="Gradle.ContactCreationTests.canCreateContactWithEmptyProperties" />
-        <item itemvalue="Gradle.ContactCreationTests.canCreateContact" />
-        <item itemvalue="Gradle.GroupCreationTests" />
-        <item itemvalue="Gradle.Tests in 'addressbook_web_tests.test'" />
       </list>
     </recent_temporary>
   </component>

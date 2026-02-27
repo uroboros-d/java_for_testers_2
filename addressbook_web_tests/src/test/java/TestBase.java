@@ -1,3 +1,4 @@
+import model.Contact;
 import model.Group;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.By;
@@ -23,6 +24,23 @@ public class TestBase {
             driver.findElement(By.name("pass")).sendKeys("secret");
             driver.findElement(By.xpath("//input[@value=\'Login\']")).click();
         }
+    }
+
+    protected static void createContact(Contact contact) {
+        driver.findElement(By.name("firstname")).click();
+        driver.findElement(By.name("firstname")).sendKeys(contact.firstname());
+        driver.findElement(By.name("lastname")).click();
+        driver.findElement(By.name("lastname")).sendKeys(contact.lastname());
+        driver.findElement(By.name("address")).click();
+        driver.findElement(By.name("address")).sendKeys(contact.address());
+        driver.findElement(By.name("submit")).click();
+        driver.findElement(By.linkText("home page")).click();
+    }
+
+    protected static void removeContact() {
+        driver.findElement(By.name("selected[]")).click();
+        driver.findElement(By.cssSelector("input[value='Delete']")).click();
+        driver.findElement(By.linkText("home page")).click();
     }
 
     protected void createGroup(Group group) {
@@ -60,5 +78,21 @@ public class TestBase {
 
     protected boolean isGroupPresent() {
         return isElementPresent(By.name("selected[]"));
+    }
+
+    protected void openAddNewPage() {
+        if (!isElementPresent(By.name("firstname"))) {
+            driver.findElement(By.linkText("add new")).click();
+        }
+    }
+
+    protected boolean isContactPresent() {
+        return isElementPresent(By.name("selected[]"));
+    }
+
+    protected void openHomePage() {
+        if (! isElementPresent(By.cssSelector("input[value='Delete']"))) {
+            driver.findElement(By.linkText("home")).click();
+        }
     }
 }
