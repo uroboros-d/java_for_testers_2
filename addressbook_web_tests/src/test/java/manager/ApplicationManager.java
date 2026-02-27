@@ -12,6 +12,8 @@ public class ApplicationManager {
 
     protected static WebDriver driver;
 
+    protected LoginHelper session;
+
     public void init() {
         if (driver == null) {
             driver = new FirefoxDriver();
@@ -24,6 +26,13 @@ public class ApplicationManager {
             driver.findElement(By.name("pass")).sendKeys("secret");
             driver.findElement(By.xpath("//input[@value=\'Login\']")).click();
         }
+    }
+
+    public  LoginHelper session() {
+        if (session == null) {
+            session = new LoginHelper();
+        }
+        return session;
     }
 
     public boolean isElementPresent(By locator) {
