@@ -24,6 +24,7 @@ public class ContactHelper {
     }
 
     public void removeContact() {
+        openHome();
         manager.driver.findElement(By.name("selected[]")).click();
         manager.driver.findElement(By.cssSelector("input[value='Delete']")).click();
         manager.driver.findElement(By.linkText("home page")).click();
@@ -36,11 +37,12 @@ public class ContactHelper {
     }
 
     public boolean isContactPresent() {
+        openHome();
         return manager.isElementPresent(By.name("selected[]"));
     }
 
-    public void openHomePage() {
-        if (! manager.isElementPresent(By.cssSelector("input[value='Delete']"))) {
+    public void openHome() {
+        if (! manager.isElementPresent(By.cssSelector("input[name='searchstring']"))) {
             manager.driver.findElement(By.linkText("home")).click();
         }
     }
