@@ -7,7 +7,6 @@ public class ContactCreationTests extends TestBase {
 
     @Test
     public void canCreateContact() {
-        app.contacts().openAddNewPage();
         app.contacts().createContact(new Contact()
                 .withLastname("firstname")
                 .withFirstname("lastname")
@@ -16,13 +15,11 @@ public class ContactCreationTests extends TestBase {
 
     @Test
     public void canCreateContactWithEmptyProperties() {
-        app.contacts().openAddNewPage();
         app.contacts().createContact(new Contact());
     }
 
     @Test
     public void canCreateContactWithNameOnly() {
-        app.contacts().openAddNewPage();
         app.contacts().createContact(new Contact()
                 .withLastname("firstname only"));
     }

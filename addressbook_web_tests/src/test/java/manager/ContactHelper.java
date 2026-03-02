@@ -12,6 +12,7 @@ public class ContactHelper {
     }
 
     public void createContact(Contact contact) {
+        openAddNewPage();
         manager.driver.findElement(By.name("firstname")).click();
         manager.driver.findElement(By.name("firstname")).sendKeys(contact.firstname());
         manager.driver.findElement(By.name("lastname")).click();
