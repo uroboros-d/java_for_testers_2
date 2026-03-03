@@ -13,7 +13,7 @@ public class GroupHelper {
 
     public void openGroupsPage() {
         if (! manager.isElementPresent(By.name("new"))) {
-            manager.driver.findElement(By.linkText("groups")).click();
+            click(By.linkText("groups"));
         }
     }
 
@@ -47,39 +47,43 @@ public class GroupHelper {
     }
 
     private void submitGroupCreation() {
-        manager.driver.findElement(By.name("submit")).click();
+        click(By.name("submit"));
     }
 
     private void initGroupCreation() {
-        manager.driver.findElement(By.name("new")).click();
+        click(By.name("new"));
     }
 
     private void fillGroupForm(Group group) {
-        manager.driver.findElement(By.name("group_name")).click();
+        click(By.name("group_name"));
         manager.driver.findElement(By.name("group_name")).sendKeys(group.name());
-        manager.driver.findElement(By.name("group_header")).click();
+        click(By.name("group_header"));
         manager.driver.findElement(By.name("group_header")).sendKeys(group.header());
-        manager.driver.findElement(By.name("group_footer")).click();
+        click(By.name("group_footer"));
         manager.driver.findElement(By.name("group_footer")).sendKeys(group.footer());
     }
 
     private void submitGroupDeletion() {
-        manager.driver.findElement(By.name("delete")).click();
+        click(By.name("delete"));
     }
 
     private void returnToGroupsPage() {
-        manager.driver.findElement(By.linkText("group page")).click();
+        click(By.linkText("group page"));
     }
 
     private void selectGroup() {
-        manager.driver.findElement(By.name("selected[]")).click();
+        click(By.name("selected[]"));
     }
 
     private void submitGroupModification() {
-        manager.driver.findElement(By.name("update")).click();
+        click(By.name("update"));
     }
 
     private void initGroupModification() {
-        manager.driver.findElement(By.name("update")).click();
+        click(By.name("update"));
+    }
+
+    private void click(By submit) {
+        manager.driver.findElement(submit).click();
     }
 }
