@@ -55,9 +55,9 @@ public class GroupHelper {
     }
 
     private void fillGroupForm(Group group) {
-        type("group_name", group.name());
-        type("group_header", group.header());
-        type("group_footer", group.footer());
+        type(By.name("group_name"), group.name());
+        type(By.name("group_header"), group.header());
+        type(By.name("group_footer"), group.footer());
     }
 
     private void submitGroupDeletion() {
