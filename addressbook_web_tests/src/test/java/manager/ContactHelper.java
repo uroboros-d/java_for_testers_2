@@ -3,12 +3,10 @@ package manager;
 import model.Contact;
 import org.openqa.selenium.By;
 
-public class ContactHelper extends HelperBase {
-
-    private final ApplicationManager manager;
+public class ContactHelper extends HelperBase{
 
     public ContactHelper(ApplicationManager manager) {
-        this.manager = manager;
+        super(manager);
     }
 
     public void createContact(Contact contact) {
