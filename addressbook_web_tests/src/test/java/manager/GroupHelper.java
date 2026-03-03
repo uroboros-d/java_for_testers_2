@@ -80,7 +80,7 @@ public class GroupHelper {
     }
 
     private void initGroupModification() {
-        click(By.name("update"));
+        click(By.name("edit"));
     }
 
     private void click(By submit) {
