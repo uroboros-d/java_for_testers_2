@@ -55,12 +55,9 @@ public class GroupHelper {
     }
 
     private void fillGroupForm(Group group) {
-        click(By.name("group_name"));
-        manager.driver.findElement(By.name("group_name")).sendKeys(group.name());
-        click(By.name("group_header"));
-        manager.driver.findElement(By.name("group_header")).sendKeys(group.header());
-        click(By.name("group_footer"));
-        manager.driver.findElement(By.name("group_footer")).sendKeys(group.footer());
+        type("group_name", group.name());
+        type("group_header", group.header());
+        type("group_footer", group.footer());
     }
 
     private void submitGroupDeletion() {
@@ -83,7 +80,13 @@ public class GroupHelper {
         click(By.name("edit"));
     }
 
-    private void click(By submit) {
-        manager.driver.findElement(submit).click();
+    private void click(By locator) {
+        manager.driver.findElement(locator).click();
     }
+
+    private void type(By locator, String text) {
+        click(locator);
+        manager.driver.findElement(locator).sendKeys(text);
+    }
+
 }
