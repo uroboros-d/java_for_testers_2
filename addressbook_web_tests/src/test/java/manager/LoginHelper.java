@@ -2,7 +2,7 @@ package manager;
 
 import org.openqa.selenium.By;
 
-public class LoginHelper {
+public class LoginHelper extends HelperBase{
 
     private final ApplicationManager manager;
 

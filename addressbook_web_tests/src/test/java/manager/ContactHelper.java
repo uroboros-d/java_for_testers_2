@@ -3,7 +3,7 @@ package manager;
 import model.Contact;
 import org.openqa.selenium.By;
 
-public class ContactHelper {
+public class ContactHelper extends HelperBase {
 
     private final ApplicationManager manager;
 
