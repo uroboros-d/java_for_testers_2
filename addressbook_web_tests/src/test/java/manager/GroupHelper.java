@@ -41,4 +41,13 @@ public class GroupHelper {
         manager.driver.findElement(By.name("delete")).click();
         manager.driver.findElement(By.linkText("group page")).click();
     }
+
+    public void modifyGroup(Group modifiedgroup) {
+        openGroupsPage();
+        selectGroup();
+        initGroupModification();
+        fillGroupForm(modifiedgroup);
+        submitGroupModification();
+        returnToGroupsPage();
+    }
 }
