@@ -86,6 +86,7 @@ public class GroupHelper {
 
     private void type(By locator, String text) {
         click(locator);
+        manager.driver.findElement(locator).clear();
         manager.driver.findElement(locator).sendKeys(text);
     }
 
