@@ -1,6 +1,7 @@
 package tests;
 
 import model.Group;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class GroupRemovalTests extends TestBase {
@@ -10,6 +11,9 @@ public class GroupRemovalTests extends TestBase {
         if (!app.groups().isGroupPresent()) {
             app.groups().createGroup(new Group());
         }
+        int groupCount = app.groups().getCount();
         app.groups().removeGroup();
+        int newGroupCount = app.groups().getCount();
+        Assertions.assertEquals(groupCount - 1, newGroupCount);
     }
 }
