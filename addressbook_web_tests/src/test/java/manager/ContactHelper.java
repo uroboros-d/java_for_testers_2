@@ -11,37 +11,65 @@ public class ContactHelper extends HelperBase{
 
     public void createContact(Contact contact) {
         openAddNewPage();
-        manager.driver.findElement(By.name("firstname")).click();
-        manager.driver.findElement(By.name("firstname")).sendKeys(contact.firstname());
-        manager.driver.findElement(By.name("lastname")).click();
-        manager.driver.findElement(By.name("lastname")).sendKeys(contact.lastname());
-        manager.driver.findElement(By.name("address")).click();
-        manager.driver.findElement(By.name("address")).sendKeys(contact.address());
-        manager.driver.findElement(By.name("submit")).click();
-        manager.driver.findElement(By.linkText("home page")).click();
+        fillContactForm(contact);
+        submitContactCreation();
+        returnToHomePage();
+    }
+
+    private void returnToHomePage() {
+        click(By.linkText("home page"));
+//        manager.driver.findElement(By.linkText("home page")).click();
+    }
+
+    private void submitContactCreation() {
+        click(By.name("submit"));
+    }
+
+    private void fillContactForm(Contact contact) {
+        type(By.name("firstname"), contact.firstname());
+        type(By.name("lastname"), contact.lastname());
+        type(By.name("address"), contact.address());
+//        manager.driver.findElement(By.name("firstname")).click();
+//        manager.driver.findElement(By.name("firstname")).sendKeys(contact.firstname());
+//        manager.driver.findElement(By.name("lastname")).click();
+//        manager.driver.findElement(By.name("lastname")).sendKeys(contact.lastname());
+//        manager.driver.findElement(By.name("address")).click();
+//        manager.driver.findElement(By.name("address")).sendKeys(contact.address());
     }
 
     public void removeContact() {
-        openHome();
-        manager.driver.findElement(By.name("selected[]")).click();
-        manager.driver.findElement(By.cssSelector("input[value='Delete']")).click();
-        manager.driver.findElement(By.linkText("home page")).click();
+        openHomePage();
+        selectContact();
+        submitContactDeletion();
+        returnToHomePage();
+    }
+
+    private void submitContactDeletion() {
+        click(By.cssSelector("input[value='Delete']"));
+//        manager.driver.findElement(By.cssSelector("input[value='Delete']")).click();
+    }
+
+    private void selectContact() {
+        click(By.name("selected[]"));
+//        manager.driver.findElement(By.name("selected[]")).click();
     }
 
     public void openAddNewPage() {
         if (!manager.isElementPresent(By.name("firstname"))) {
-            manager.driver.findElement(By.linkText("add new")).click();
+            click(By.linkText("add new"));
+//            manager.driver.findElement(By.linkText("add new")).click();
         }
     }
 
     public boolean isContactPresent() {
-        openHome();
+        openHomePage();
         return manager.isElementPresent(By.name("selected[]"));
     }
 
-    public void openHome() {
+    public void openHomePage() {
         if (! manager.isElementPresent(By.cssSelector("input[name='searchstring']"))) {
-            manager.driver.findElement(By.linkText("home")).click();
+            click(By.linkText("home"));
+//            manager.driver.findElement(By.linkText("home")).click();
         }
     }
 }
