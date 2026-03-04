@@ -8,7 +8,7 @@ public class GroupRemovalTests extends TestBase {
 
     @Test
     public void canRemoveGroup() {
-        if (!app.groups().isGroupPresent()) {
+        if (app.groups().getCount() == 0) {
             app.groups().createGroup(new Group());
         }
         int groupCount = app.groups().getCount();
