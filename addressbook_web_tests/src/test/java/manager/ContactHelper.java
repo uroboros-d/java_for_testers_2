@@ -18,7 +18,6 @@ public class ContactHelper extends HelperBase{
 
     private void returnToHomePage() {
         click(By.linkText("home page"));
-//        manager.driver.findElement(By.linkText("home page")).click();
     }
 
     private void submitContactCreation() {
@@ -29,12 +28,6 @@ public class ContactHelper extends HelperBase{
         type(By.name("firstname"), contact.firstname());
         type(By.name("lastname"), contact.lastname());
         type(By.name("address"), contact.address());
-//        manager.driver.findElement(By.name("firstname")).click();
-//        manager.driver.findElement(By.name("firstname")).sendKeys(contact.firstname());
-//        manager.driver.findElement(By.name("lastname")).click();
-//        manager.driver.findElement(By.name("lastname")).sendKeys(contact.lastname());
-//        manager.driver.findElement(By.name("address")).click();
-//        manager.driver.findElement(By.name("address")).sendKeys(contact.address());
     }
 
     public void removeContact() {
@@ -46,18 +39,15 @@ public class ContactHelper extends HelperBase{
 
     private void submitContactDeletion() {
         click(By.cssSelector("input[value='Delete']"));
-//        manager.driver.findElement(By.cssSelector("input[value='Delete']")).click();
     }
 
     private void selectContact() {
         click(By.name("selected[]"));
-//        manager.driver.findElement(By.name("selected[]")).click();
     }
 
     public void openAddNewPage() {
         if (!manager.isElementPresent(By.name("firstname"))) {
             click(By.linkText("add new"));
-//            manager.driver.findElement(By.linkText("add new")).click();
         }
     }
 
@@ -69,7 +59,6 @@ public class ContactHelper extends HelperBase{
     public void openHomePage() {
         if (! manager.isElementPresent(By.cssSelector("input[name='searchstring']"))) {
             click(By.linkText("home"));
-//            manager.driver.findElement(By.linkText("home")).click();
         }
     }
 }
