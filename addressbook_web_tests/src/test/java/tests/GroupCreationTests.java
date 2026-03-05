@@ -4,9 +4,22 @@ import model.Group;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class GroupCreationTests extends TestBase {
+
+    public static List<String> groupNameProvider() {
+        var result = new ArrayList<String>();
+        for (int i = 0; i < 5; i++) {
+            result.add(randomString(i*10));
+        }
+        return result;
+    }
 
     @ParameterizedTest
     @ValueSource(strings = {"name", "name'"})
@@ -30,7 +43,8 @@ public class GroupCreationTests extends TestBase {
         app.groups().createGroup(new Group().withName("nameOnly"));
     }
 
-    @Test
+    @ParameterizedTest
+    @MethodSource("groupNameProvider")
     public void canCreateMultipleGroups() {
         int n = 5;
         int groupCount = app.groups().getCount();
