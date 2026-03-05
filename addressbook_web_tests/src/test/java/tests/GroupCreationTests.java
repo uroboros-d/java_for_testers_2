@@ -33,7 +33,7 @@ public class GroupCreationTests extends TestBase {
         int groupCount = app.groups().getCount();
         for (int i = 0; i < n; i++) {
             app.groups().createGroup(new Group()
-                    .withName("name/header/footer")
+                    .withName("name/header/footer + " + i)
                     .withHeader("header")
                     .withFooter("footer"));
         }
