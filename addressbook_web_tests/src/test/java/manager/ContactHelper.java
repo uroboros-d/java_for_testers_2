@@ -66,4 +66,11 @@ public class ContactHelper extends HelperBase{
         openHomePage();
         return manager.driver.findElements(By.name("selected[]")).size();
     }
+
+    public void removeAllContacts() {
+        openHomePage();
+        click(By.id("MassCB"));
+        submitContactDeletion();
+        returnToHomePage();
+    }
 }
