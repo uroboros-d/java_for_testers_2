@@ -8,7 +8,7 @@ public class ContactRemovalTests  extends TestBase {
 
         @Test
         public void canRemoveContact() {
-            if (!app.contacts().getCount() == 0) {
+            if (app.contacts().getCount() == 0) {
                 app.contacts().createContact(new Contact());
             }
             int contactCount = app.contacts().getCount();
