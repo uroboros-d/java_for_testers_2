@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1ed3a8ec-fdf5-4c8b-a0e5-d0fe04cce3cd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/src/test/java/manager/GroupHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook_web_tests/src/test/java/manager/GroupHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/src/test/java/tests/ContactCreationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook_web_tests/src/test/java/tests/ContactCreationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,38 +71,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.ContactCreationTests (1).executor": "Run",
-    "Gradle.ContactCreationTests.canCreateContact.executor": "Run",
-    "Gradle.ContactCreationTests.canCreateContactWithEmptyProperties.executor": "Run",
-    "Gradle.ContactCreationTests.canCreateContactWithNameOnly.executor": "Run",
-    "Gradle.ContactCreationTests.executor": "Run",
-    "Gradle.ContactRemovalTests (1).executor": "Run",
-    "Gradle.ContactRemovalTests.canRemoveContact.executor": "Run",
-    "Gradle.ContactRemovalTests.executor": "Run",
-    "Gradle.GroupCreationTests.canCreateGroup.executor": "Run",
-    "Gradle.GroupCreationTests.canCreateGroupWithEmptyName.executor": "Run",
-    "Gradle.GroupCreationTests.canCreateGroupWithNameOnly.executor": "Run",
-    "Gradle.GroupCreationTests.executor": "Run",
-    "Gradle.GroupCreationTests.test.executor": "Run",
-    "Gradle.GroupModificationTests.executor": "Run",
-    "Gradle.GroupRemovalTests (1).executor": "Run",
-    "Gradle.GroupRemovalTests.canRemoveGroup.executor": "Run",
-    "Gradle.GroupRemovalTests.executor": "Run",
-    "Gradle.Tests in 'addressbook_web_tests.test'.executor": "Run",
-    "Gradle.Tests in 'tests'.executor": "Run",
-    "JUnit.GroupCreationTests.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.42528737",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.ContactCreationTests (1).executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ContactCreationTests.canCreateContact.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ContactCreationTests.canCreateContactWithEmptyProperties.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ContactCreationTests.canCreateContactWithNameOnly.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ContactCreationTests.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ContactRemovalTests (1).executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ContactRemovalTests.canRemoveContact.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ContactRemovalTests.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GroupCreationTests.canCreateGroup.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GroupCreationTests.canCreateGroupWithEmptyName.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GroupCreationTests.canCreateGroupWithNameOnly.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GroupCreationTests.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GroupCreationTests.test.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GroupModificationTests.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GroupRemovalTests (1).executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GroupRemovalTests.canRemoveAllGroupsAtOnce.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GroupRemovalTests.canRemoveGroup.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GroupRemovalTests.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Tests in 'addressbook_web_tests.test'.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Tests in 'tests'.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GroupCreationTests.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.42528737&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveMembersDialog.RECENTS_KEY">
       <recent name="ApplicationManager" />
