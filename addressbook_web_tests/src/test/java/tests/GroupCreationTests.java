@@ -4,7 +4,7 @@ import model.Group;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class GroupCreationTests extends TestBase{
+public class GroupCreationTests extends TestBase {
 
     @Test
     public void canCreateGroup() {
@@ -25,5 +25,19 @@ public class GroupCreationTests extends TestBase{
     @Test
     public void canCreateGroupWithNameOnly() {
         app.groups().createGroup(new Group().withName("nameOnly"));
+    }
+
+    @Test
+    public void canCreateMultipleGroups() {
+        int n = 5;
+        int groupCount = app.groups().getCount();
+        for (int i = 0; i < n; i++) {
+            app.groups().createGroup(new Group()
+                    .withName("name/header/footer")
+                    .withHeader("header")
+                    .withFooter("footer"));
+        }
+        int newGroupCount = app.groups().getCount();
+        Assertions.assertEquals(groupCount + n, newGroupCount);
     }
 }
