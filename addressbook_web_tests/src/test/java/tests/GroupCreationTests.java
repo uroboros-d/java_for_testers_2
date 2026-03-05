@@ -44,16 +44,13 @@ public class GroupCreationTests extends TestBase {
 
     @ParameterizedTest
     @MethodSource("groupNameProvider")
-    public void canCreateMultipleGroups() {
-        int n = 5;
+    public void canCreateMultipleGroups(String name) {
         int groupCount = app.groups().getCount();
-        for (int i = 0; i < n; i++) {
-            app.groups().createGroup(new Group()
-                    .withName(randomString(i * 10))
+        app.groups().createGroup(new Group()
+                    .withName(name)
                     .withHeader("header")
                     .withFooter("footer"));
-        }
         int newGroupCount = app.groups().getCount();
-        Assertions.assertEquals(groupCount + n, newGroupCount);
+        Assertions.assertEquals(groupCount + 1, newGroupCount);
     }
 }
