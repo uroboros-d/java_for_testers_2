@@ -12,9 +12,8 @@ import java.util.List;
 public class GroupCreationTests extends TestBase {
 
     public static List<Group> groupProvider() {
-        var result = new ArrayList<>(List.of(
-                new Group().withName("name'")));
-        for (var name : List.of("", "name")) {
+        var result = new ArrayList<Group>();
+            for (var name : List.of("", "name")) {
             for (var header : List.of("", "header")) {
                 for (var footer : List.of("", "footer")) {
                     result.add(new Group()
@@ -31,6 +30,10 @@ public class GroupCreationTests extends TestBase {
                     .withFooter(randomString(i * 10)));
         }
         return result;
+    }
+
+    public static List<Group> negativeGroupProvider() {
+        return new ArrayList<>(List.of(new Group().withName("name'")));
     }
 
 //    @ParameterizedTest
