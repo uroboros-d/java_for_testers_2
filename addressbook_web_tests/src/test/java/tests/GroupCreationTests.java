@@ -13,10 +13,17 @@ public class GroupCreationTests extends TestBase {
 
     public static List<Group> groupProvider() {
         var result = new ArrayList<>(List.of(
-                new Group(),
-                new Group().withName("nameOnly"),
-                new Group().withName("name"),
                 new Group().withName("name'")));
+        for (var name : List.of("", "name")) {
+            for (var header : List.of("", "header")) {
+                for (var footer : List.of("", "footer")) {
+                    result.add(new Group()
+                            .withName(name)
+                            .withHeader(header)
+                            .withFooter(footer));
+                }
+            }
+        }
         for (int i = 0; i < 5; i++) {
             result.add(new Group()
                     .withName(randomString(i * 10))
