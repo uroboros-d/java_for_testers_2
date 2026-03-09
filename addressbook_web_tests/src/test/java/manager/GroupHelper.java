@@ -31,9 +31,9 @@ public class GroupHelper extends HelperBase {
         returnToGroupsPage();
     }
 
-    public void removeGroup() {
+    public void removeGroup(Group group) {
         openGroupsPage();
-        selectGroup();
+        selectGroup(group);
         submitGroupDeletion();
         returnToGroupsPage();
     }
