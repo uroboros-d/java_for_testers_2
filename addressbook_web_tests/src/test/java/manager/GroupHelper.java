@@ -69,8 +69,8 @@ public class GroupHelper extends HelperBase {
         click(By.linkText("group page"));
     }
 
-    private void selectGroup() {
-        click(By.name("selected[]"));
+    private void selectGroup(Group group) {
+        click(By.cssSelector(String.format("input value=%s", group.id())));
     }
 
     private void submitGroupModification() {
