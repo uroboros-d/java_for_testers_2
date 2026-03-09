@@ -40,7 +40,7 @@ public class GroupHelper extends HelperBase {
 
     public void modifyGroup(Group modifiedgroup) {
         openGroupsPage();
-        selectGroup();
+        selectGroup(null);
         initGroupModification();
         fillGroupForm(modifiedgroup);
         submitGroupModification();
@@ -70,7 +70,7 @@ public class GroupHelper extends HelperBase {
     }
 
     private void selectGroup(Group group) {
-        click(By.cssSelector(String.format("input value=%s", group.id())));
+        click(By.cssSelector(String.format("input[value='%s']", group.id())));
     }
 
     private void submitGroupModification() {
