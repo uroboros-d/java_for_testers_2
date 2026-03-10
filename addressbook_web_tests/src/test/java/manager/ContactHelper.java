@@ -33,9 +33,9 @@ public class ContactHelper extends HelperBase{
         type(By.name("address"), contact.address());
     }
 
-    public void removeContact() {
+    public void removeContact(Contact contact) {
         openHomePage();
-        selectContact();
+        selectContact(contact);
         submitContactDeletion();
         returnToHomePage();
     }
@@ -44,8 +44,8 @@ public class ContactHelper extends HelperBase{
         click(By.cssSelector("input[value='Delete']"));
     }
 
-    private void selectContact() {
-        click(By.name("selected[]"));
+    private void selectContact(Contact contact) {
+        click(By.cssSelector(String.format("input[value='%s']", contact.id())));
     }
 
     public void openAddNewPage() {
@@ -86,10 +86,10 @@ public class ContactHelper extends HelperBase{
             var lastname = cells.get(1).getText();
             var firstname = cells.get(2).getText();
             var address = cells.get(3).getText();
-            contacts.add(new Contact().
-                    withId(id).
-                    withLastname(lastname).
-                    withFirstname(firstname)
+            contacts.add(new Contact()
+                    .withId(id)
+                    .withLastname(lastname)
+                    .withFirstname(firstname)
                     .withAddress(address));
         }
         return contacts;
