@@ -18,7 +18,6 @@ public class GroupRemovalTests extends TestBase {
         var oldGroups = app.groups().getList();
         var rnd = new Random();
         var index = rnd.nextInt(oldGroups.size());
-
         app.groups().removeGroup(oldGroups.get(index));
         var newGroups = app.groups().getList();
         var expectedList = new ArrayList<>(oldGroups);
