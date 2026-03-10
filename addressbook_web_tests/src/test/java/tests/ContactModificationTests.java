@@ -10,6 +10,9 @@ public class ContactModificationTests extends TestBase{
         if (app.contacts().getCount() == 0) {
             app.contacts().createContact(new Contact());
         }
-        app.contacts().modifyContact();
+        app.contacts().modifyContact(new Contact()
+                .withLastname("modified lastname")
+                .withFirstname("modified firstname")
+                .withAddress("modified address"));
     }
 }
