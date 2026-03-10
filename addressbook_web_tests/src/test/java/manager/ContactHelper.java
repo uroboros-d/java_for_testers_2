@@ -97,10 +97,16 @@ public class ContactHelper extends HelperBase{
 
     public void modifyContact(Contact modifiedContact) {
         openHomePage();
-        selectContact(null);
+        //под вопросом необходимость selectContact
+        //возможно, его нужно вставить внутрь initContactModification();
+//        selectContact(null);
         initContactModification();
         fillContactForm(modifiedContact);
         submitContactModification();
         returnToHomePage();
+    }
+
+    private void initContactModification() {
+        manager.driver.findElement(By.cssSelector("img[title='Edit']")).click();
     }
 }
