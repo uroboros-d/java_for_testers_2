@@ -3,6 +3,9 @@ package manager;
 import model.Contact;
 import org.openqa.selenium.By;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ContactHelper extends HelperBase{
 
     public ContactHelper(ApplicationManager manager) {
@@ -72,5 +75,23 @@ public class ContactHelper extends HelperBase{
         click(By.id("MassCB"));
         submitContactDeletion();
         returnToHomePage();
+    }
+
+    public List<Contact> getList() {
+        var contacts = new ArrayList<Contact>();
+        var trs = manager.driver.findElements(By.name("entry"));
+        for (var tr : trs) {
+            var cells = tr.findElements(By.tagName("td"));
+            var id = cells.get(0).findElement(By.tagName("input")).getAttribute("id");
+            var lastname = cells.get(1).getText();
+            var firstname = cells.get(2).getText();
+            var address = cells.get(3).getText();
+            contacts.add(new Contact().
+                    withId(id).
+                    withLastname(lastname).
+                    withFirstname(firstname)
+                    .withAddress(address));
+        }
+        return contacts;
     }
 }
