@@ -106,6 +106,10 @@ public class ContactHelper extends HelperBase{
         returnToHomePage();
     }
 
+    private void submitContactModification() {
+        manager.driver.findElement(By.name("update")).click();
+    }
+
     private void initContactModification() {
         manager.driver.findElement(By.cssSelector("img[title='Edit']")).click();
     }
