@@ -95,12 +95,9 @@ public class ContactHelper extends HelperBase{
         return contacts;
     }
 
-    public void modifyContact(Contact modifiedContact) {
+    public void modifyContact(Contact contact, Contact modifiedContact) {
         openHomePage();
-        //под вопросом необходимость selectContact
-        //возможно, его нужно вставить внутрь initContactModification();
-//        selectContact(null);
-        initContactModification();
+        initContactModification(contact);
         fillContactForm(modifiedContact);
         submitContactModification();
         returnToHomePage();
@@ -110,7 +107,9 @@ public class ContactHelper extends HelperBase{
         manager.driver.findElement(By.name("update")).click();
     }
 
-    private void initContactModification() {
-        manager.driver.findElement(By.cssSelector("img[title='Edit']")).click();
+    private void initContactModification(Contact contact) {
+        String xpathExpression ="//tr[td/input[@name='selected[]' and @value='" + contact.id()
+                + "']]" + "/td[a/img[@title='Edit']]";
+        click(By.xpath(xpathExpression));
     }
 }

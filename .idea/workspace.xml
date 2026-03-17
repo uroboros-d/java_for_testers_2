@@ -7,6 +7,9 @@
     <list default="true" id="1ed3a8ec-fdf5-4c8b-a0e5-d0fe04cce3cd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/addressbook_web_tests/src/test/java/manager/ContactHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook_web_tests/src/test/java/manager/ContactHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/src/test/java/manager/GroupHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook_web_tests/src/test/java/manager/GroupHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/src/test/java/tests/ContactModificationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook_web_tests/src/test/java/tests/ContactModificationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/src/test/java/tests/GroupModificationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook_web_tests/src/test/java/tests/GroupModificationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,9 +81,10 @@
     "Gradle.ContactCreationTests.canCreateContactWithEmptyProperties.executor": "Run",
     "Gradle.ContactCreationTests.canCreateContactWithNameOnly.executor": "Run",
     "Gradle.ContactCreationTests.executor": "Run",
+    "Gradle.ContactModificationTests.canModifyContact.executor": "Run",
     "Gradle.ContactRemovalTests (1).executor": "Run",
     "Gradle.ContactRemovalTests.canRemoveAllContactsAtOnce.executor": "Run",
-    "Gradle.ContactRemovalTests.canRemoveContact.executor": "Debug",
+    "Gradle.ContactRemovalTests.canRemoveContact.executor": "Run",
     "Gradle.ContactRemovalTests.executor": "Run",
     "Gradle.GroupCreationTests.canCreateGroup.executor": "Run",
     "Gradle.GroupCreationTests.canCreateGroupWithEmptyName.executor": "Run",
@@ -112,7 +116,7 @@
       <recent name="ApplicationManager" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.ContactRemovalTests.canRemoveContact">
+  <component name="RunManager" selected="Gradle.ContactModificationTests.canModifyContact">
     <configuration name="ContactCreationTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -137,6 +141,30 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="ContactModificationTests.canModifyContact" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/addressbook_web_tests" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;tests.ContactModificationTests.canModifyContact&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="ContactRemovalTests.canRemoveContact" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -151,30 +179,6 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;tests.ContactRemovalTests.canRemoveContact&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="GroupCreationTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/addressbook_web_tests" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;tests.GroupCreationTests&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -234,19 +238,19 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Gradle.ContactModificationTests.canModifyContact" />
+      <item itemvalue="Gradle.ContactCreationTests" />
       <item itemvalue="Gradle.ContactRemovalTests.canRemoveContact" />
       <item itemvalue="Gradle.GroupModificationTests.canModifyGroup" />
       <item itemvalue="Gradle.GroupRemovalTests.canRemoveGroup" />
-      <item itemvalue="Gradle.ContactCreationTests" />
-      <item itemvalue="Gradle.GroupCreationTests" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.ContactModificationTests.canModifyContact" />
         <item itemvalue="Gradle.ContactRemovalTests.canRemoveContact" />
         <item itemvalue="Gradle.GroupRemovalTests.canRemoveGroup" />
         <item itemvalue="Gradle.GroupModificationTests.canModifyGroup" />
         <item itemvalue="Gradle.ContactCreationTests" />
-        <item itemvalue="Gradle.GroupCreationTests" />
       </list>
     </recent_temporary>
   </component>
