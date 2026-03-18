@@ -101,6 +101,7 @@ public class GroupHelper extends HelperBase {
     }
 
     public List<Group> getList() {
+        openGroupsPage();
         var groups = new ArrayList<Group>();
         var spans = manager.driver.findElements(By.cssSelector("span.group"));
         for (var span : spans) {
