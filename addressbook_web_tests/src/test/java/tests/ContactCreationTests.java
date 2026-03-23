@@ -30,7 +30,7 @@ public class ContactCreationTests extends TestBase {
                     .withLastname(randomString(i * 10))
                     .withFirstname(randomString(i * 10))
                     .withAddress(randomString(i * 10))
-                    .withPhoto("src/test/resources/images/avatar.jpg"));
+                    .withPhoto(randomFile("src/test/resources/images")));
         }
         return result;
     }
