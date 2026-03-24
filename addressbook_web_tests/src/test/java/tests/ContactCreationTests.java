@@ -21,7 +21,8 @@ public class ContactCreationTests extends TestBase {
                     result.add(new Contact()
                             .withLastname(lastname)
                             .withFirstname(firstname)
-                            .withAddress(address));
+                            .withAddress(address)
+                            .withPhoto(randomFile("src/test/resources/images")));
                 }
             }
         }
@@ -46,9 +47,10 @@ public class ContactCreationTests extends TestBase {
         };
         newContacts.sort(compareById);
         var expectedList = new ArrayList<>(oldContacts);
-        expectedList.add(contact.withId(newContacts.get(newContacts.size() - 1).id()));
+        expectedList.add(contact.withId(newContacts.get(newContacts.size() - 1).id())
+                .withPhoto(""));
         expectedList.sort(compareById);
-        Assertions.assertEquals(newContacts, expectedList);
+        Assertions.assertEquals(expectedList, newContacts);
     }
 
 //    @Test
