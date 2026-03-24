@@ -4,4 +4,9 @@ public class Generator {
     public static void main(String[] args) {
         new Generator().run();
     }
+
+    private void run() {
+        var data = generate();
+        save(data);
+    }
 }
