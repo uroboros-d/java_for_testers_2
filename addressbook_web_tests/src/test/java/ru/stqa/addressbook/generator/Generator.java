@@ -1,5 +1,6 @@
 package ru.stqa.addressbook.generator;
 
+import com.beust.jcommander.JCommander;
 import com.beust.jcommander.Parameter;
 
 public class Generator {
@@ -14,12 +15,15 @@ public class Generator {
     String format;
 
     @Parameter(names={"--count", "-c"})
-    String count;
-
-
+    int count;
 
     public static void main(String[] args) {
-        new Generator().run();
+        var generator = new Generator();
+        JCommander.newBuilder()
+                        .addObject(generator)
+                        .build()
+                        .parse(args);
+        generator.run();
     }
 
     private void run() {
