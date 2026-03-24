@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1ed3a8ec-fdf5-4c8b-a0e5-d0fe04cce3cd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/src/test/java/ru/stqa/addressbook/generator/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook_web_tests/src/test/java/ru/stqa/addressbook/generator/Generator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook_web_tests/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,53 +71,68 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.ContactCreationTests (1).executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ContactCreationTests.canCreateContact.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ContactCreationTests.canCreateContactWithEmptyProperties.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ContactCreationTests.canCreateContactWithNameOnly.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ContactCreationTests.canCreateContacts.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ContactCreationTests.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ContactModificationTests.canModifyContact.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ContactRemovalTests (1).executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ContactRemovalTests.canRemoveAllContactsAtOnce.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ContactRemovalTests.canRemoveContact.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ContactRemovalTests.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.GroupCreationTests.canCreateGroup.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.GroupCreationTests.canCreateGroupWithEmptyName.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.GroupCreationTests.canCreateGroupWithNameOnly.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.GroupCreationTests.canCreateGroups.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.GroupCreationTests.canCreateMultipleGroups.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.GroupCreationTests.canNotCreateGroup.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.GroupCreationTests.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.GroupCreationTests.test.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.GroupModificationTests.canModifyGroup.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.GroupModificationTests.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.GroupRemovalTests (1).executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.GroupRemovalTests.canRemoveAllGroupsAtOnce.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.GroupRemovalTests.canRemoveGroup.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.GroupRemovalTests.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Tests in 'addressbook_web_tests.test'.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Tests in 'tests'.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.GroupCreationTests.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.42528737&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.ContactCreationTests (1).executor": "Run",
+    "Gradle.ContactCreationTests.canCreateContact.executor": "Run",
+    "Gradle.ContactCreationTests.canCreateContactWithEmptyProperties.executor": "Run",
+    "Gradle.ContactCreationTests.canCreateContactWithNameOnly.executor": "Run",
+    "Gradle.ContactCreationTests.canCreateContacts.executor": "Run",
+    "Gradle.ContactCreationTests.executor": "Run",
+    "Gradle.ContactModificationTests.canModifyContact.executor": "Run",
+    "Gradle.ContactRemovalTests (1).executor": "Run",
+    "Gradle.ContactRemovalTests.canRemoveAllContactsAtOnce.executor": "Run",
+    "Gradle.ContactRemovalTests.canRemoveContact.executor": "Run",
+    "Gradle.ContactRemovalTests.executor": "Run",
+    "Gradle.GroupCreationTests.canCreateGroup.executor": "Run",
+    "Gradle.GroupCreationTests.canCreateGroupWithEmptyName.executor": "Run",
+    "Gradle.GroupCreationTests.canCreateGroupWithNameOnly.executor": "Run",
+    "Gradle.GroupCreationTests.canCreateGroups.executor": "Run",
+    "Gradle.GroupCreationTests.canCreateMultipleGroups.executor": "Run",
+    "Gradle.GroupCreationTests.canNotCreateGroup.executor": "Run",
+    "Gradle.GroupCreationTests.executor": "Run",
+    "Gradle.GroupCreationTests.test.executor": "Run",
+    "Gradle.GroupModificationTests.canModifyGroup.executor": "Run",
+    "Gradle.GroupModificationTests.executor": "Run",
+    "Gradle.GroupRemovalTests (1).executor": "Run",
+    "Gradle.GroupRemovalTests.canRemoveAllGroupsAtOnce.executor": "Run",
+    "Gradle.GroupRemovalTests.canRemoveGroup.executor": "Run",
+    "Gradle.GroupRemovalTests.executor": "Run",
+    "Gradle.Tests in 'addressbook_web_tests.test'.executor": "Run",
+    "Gradle.Tests in 'tests'.executor": "Run",
+    "Gradle.addressbook_web_tests [:ru.stqa.addressbook.generator.Generator.main()].executor": "Debug",
+    "JUnit.GroupCreationTests.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "deletionFromPopupRequiresConfirmation": "false",
+    "git-widget-placeholder": "main",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.42528737",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveMembersDialog.RECENTS_KEY">
       <recent name="ApplicationManager" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.ContactCreationTests.canCreateContacts">
+  <component name="RunManager" selected="Application.Generator">
+    <configuration name="Generator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.stqa.addressbook.generator.Generator" />
+      <module name="addressbook_web_tests.test" />
+      <option name="PROGRAM_PARAMETERS" value="--type groups --output groups.json --format json --count 3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.stqa.addressbook.generator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ContactCreationTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -237,8 +253,17 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Application.Generator" />
+      <item itemvalue="Gradle.ContactCreationTests.canCreateContacts" />
+      <item itemvalue="Gradle.ContactCreationTests" />
+      <item itemvalue="Gradle.ContactRemovalTests" />
+      <item itemvalue="Gradle.ContactRemovalTests.canRemoveAllContactsAtOnce" />
+      <item itemvalue="Gradle.GroupRemovalTests.canRemoveAllGroupsAtOnce" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Generator" />
         <item itemvalue="Gradle.ContactRemovalTests.canRemoveAllContactsAtOnce" />
         <item itemvalue="Gradle.GroupRemovalTests.canRemoveAllGroupsAtOnce" />
         <item itemvalue="Gradle.ContactRemovalTests" />
@@ -263,6 +288,11 @@
           <url>file://$PROJECT_DIR$/addressbook_web_tests/src/test/java/ru/stqa/addressbook/tests/GroupCreationTests.java</url>
           <line>66</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/addressbook_web_tests/src/test/java/ru/stqa/addressbook/generator/Generator.java</url>
+          <line>4</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
