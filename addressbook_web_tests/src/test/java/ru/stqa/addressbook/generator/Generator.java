@@ -9,4 +9,11 @@ public class Generator {
         var data = generate();
         save(data);
     }
+
+    private void save(Object data) {
+    }
+
+    private Object generate() {
+        return null;
+    }
 }
