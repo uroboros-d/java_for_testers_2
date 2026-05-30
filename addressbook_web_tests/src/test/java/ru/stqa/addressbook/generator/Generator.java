@@ -31,10 +31,17 @@ public class Generator {
         save(data);
     }
 
-    private void save(Object data) {
+    private Object generate() {
+        if ("groups".equals(type)) {
+            return generateGroups();
+        } else if ("contacts".equals(type)) {
+            return generateContacts();
+        } else {
+            throw new IllegalArgumentException("Неизвестный тип данных" + type);
+        }
+        return null;
     }
 
-    private Object generate() {
-        return null;
+    private void save(Object data) {
     }
 }
