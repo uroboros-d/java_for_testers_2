@@ -53,6 +53,7 @@ public class Generator {
                     .withHeader(CommonFunctions.randomString(i * 10))
                     .withFooter(CommonFunctions.randomString(i * 10)));
         }
+        return result;
     }
 
     private Object generateContacts() {
