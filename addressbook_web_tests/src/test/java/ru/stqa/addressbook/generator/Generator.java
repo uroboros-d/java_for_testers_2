@@ -2,6 +2,10 @@ package ru.stqa.addressbook.generator;
 
 import com.beust.jcommander.JCommander;
 import com.beust.jcommander.Parameter;
+import ru.stqa.addressbook.common.CommonFunctions;
+import ru.stqa.addressbook.model.Group;
+
+import java.util.ArrayList;
 
 public class Generator {
 
@@ -39,6 +43,19 @@ public class Generator {
         } else {
             throw new IllegalArgumentException("Неизвестный тип данных" + type);
         }
+    }
+
+    private Object generateGroups() {
+        var result = new ArrayList<Group>();
+        for (int i = 0; i < count; i++) {
+            result.add(new Group()
+                    .withName(CommonFunctions.randomString(i * 10))
+                    .withHeader(CommonFunctions.randomString(i * 10))
+                    .withFooter(CommonFunctions.randomString(i * 10)));
+        }
+    }
+
+    private Object generateContacts() {
         return null;
     }
 
