@@ -63,7 +63,11 @@ public class Generator {
     }
 
     private void save(Object data) {
-        ObjectMapper mapper = new ObjectMapper();
-        mapper.writeValue(new File(output), data);
+        if("json".equals(format)) {
+            ObjectMapper mapper = new ObjectMapper();
+            mapper.writeValue(new File(output), data);
+        } else {
+            throw new IllegalArgumentException("Неизвестный формат данных" + format);
+        }
     }
 }
