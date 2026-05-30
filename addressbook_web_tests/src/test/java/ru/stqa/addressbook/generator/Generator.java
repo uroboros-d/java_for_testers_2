@@ -4,7 +4,9 @@ import com.beust.jcommander.JCommander;
 import com.beust.jcommander.Parameter;
 import ru.stqa.addressbook.common.CommonFunctions;
 import ru.stqa.addressbook.model.Group;
+import tools.jackson.databind.ObjectMapper;
 
+import java.io.File;
 import java.util.ArrayList;
 
 public class Generator {
@@ -61,5 +63,7 @@ public class Generator {
     }
 
     private void save(Object data) {
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.writeValue(new File(output), data);
     }
 }
