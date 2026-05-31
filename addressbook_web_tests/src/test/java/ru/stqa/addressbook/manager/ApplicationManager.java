@@ -17,6 +17,8 @@ public class ApplicationManager {
 
     public ContactHelper contacts;
 
+    public JdbcHelper jdbc;
+
     public void init(String browser) {
         if (driver == null) {
             if ("firefox".equals(browser)) {
