@@ -3,11 +3,14 @@ package ru.stqa.addressbook.generator;
 import com.beust.jcommander.JCommander;
 import com.beust.jcommander.Parameter;
 import ru.stqa.addressbook.common.CommonFunctions;
+import ru.stqa.addressbook.model.Contact;
 import ru.stqa.addressbook.model.Group;
 import tools.jackson.databind.ObjectMapper;
 
 import java.io.File;
 import java.util.ArrayList;
+
+import static ru.stqa.addressbook.tests.TestBase.randomFile;
 
 public class Generator {
 
@@ -59,7 +62,15 @@ public class Generator {
     }
 
     private Object generateContacts() {
-        return null;
+        var result = new ArrayList<Contact>();
+        for (int i = 0; i < count; i++) {
+            result.add(new Contact()
+                    .withLastname(CommonFunctions.randomString(i * 10))
+                    .withFirstname(CommonFunctions.randomString(i * 10))
+                    .withAddress(CommonFunctions.randomString(i * 10))
+                    .withPhoto(randomFile("src/test/resources/images")));
+        }
+        return result;
     }
 
     private void save(Object data) {

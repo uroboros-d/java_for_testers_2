@@ -30,7 +30,6 @@ public class GroupCreationTests extends TestBase {
         ObjectMapper mapper = new ObjectMapper();
         var value = mapper.readValue(new File("groups.json"),  new TypeReference<List<Group>>(){});
         result.addAll(value);
-        //в этом случае при изменении конструктора (т.е. при добавлении новых свойств) код в этом месте меняться не будет
         return result;
     }
 

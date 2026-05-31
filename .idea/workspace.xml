@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1ed3a8ec-fdf5-4c8b-a0e5-d0fe04cce3cd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/src/test/java/ru/stqa/addressbook/generator/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook_web_tests/src/test/java/ru/stqa/addressbook/generator/Generator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addressbook_web_tests/src/test/java/ru/stqa/addressbook/tests/ContactCreationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook_web_tests/src/test/java/ru/stqa/addressbook/tests/ContactCreationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/addressbook_web_tests/src/test/java/ru/stqa/addressbook/tests/GroupCreationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/addressbook_web_tests/src/test/java/ru/stqa/addressbook/tests/GroupCreationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -122,11 +124,11 @@
       <recent name="ApplicationManager" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.GroupCreationTests">
+  <component name="RunManager" selected="Gradle.ContactCreationTests">
     <configuration name="Generator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.stqa.addressbook.generator.Generator" />
       <module name="addressbook_web_tests.test" />
-      <option name="PROGRAM_PARAMETERS" value="--type groups --output groups.json --format json --count 3" />
+      <option name="PROGRAM_PARAMETERS" value="--type contacts --output contacts.json --format json --count 3" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/addressbook_web_tests" />
       <extension name="coverage">
         <pattern>
@@ -193,8 +195,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.GroupCreationTests" />
         <item itemvalue="Gradle.ContactCreationTests" />
+        <item itemvalue="Gradle.GroupCreationTests" />
         <item itemvalue="Application.Generator" />
       </list>
     </recent_temporary>
