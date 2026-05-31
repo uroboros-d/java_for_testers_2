@@ -2,12 +2,14 @@ package ru.stqa.addressbook.generator;
 
 import com.beust.jcommander.JCommander;
 import com.beust.jcommander.Parameter;
+import com.fasterxml.jackson.dataformat.yaml.YAMLMapper;
 import ru.stqa.addressbook.common.CommonFunctions;
 import ru.stqa.addressbook.model.Contact;
 import ru.stqa.addressbook.model.Group;
 import tools.jackson.databind.ObjectMapper;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import static ru.stqa.addressbook.tests.TestBase.randomFile;
@@ -26,7 +28,7 @@ public class Generator {
     @Parameter(names={"--count", "-c"})
     int count;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         var generator = new Generator();
         JCommander.newBuilder()
                         .addObject(generator)
@@ -35,7 +37,7 @@ public class Generator {
         generator.run();
     }
 
-    private void run() {
+    private void run() throws IOException {
         var data = generate();
         save(data);
     }
@@ -71,12 +73,15 @@ public class Generator {
                     .withPhoto(randomFile("src/test/resources/images")));
         }
         return result;
-        
+
     }
 
-    private void save(Object data) {
+    private void save(Object data) throws IOException {
         if("json".equals(format)) {
             ObjectMapper mapper = new ObjectMapper();
+            mapper.writeValue(new File(output), data);
+        } if ("yaml".equals(format)) {
+            var mapper = new YAMLMapper();
             mapper.writeValue(new File(output), data);
         } else {
             throw new IllegalArgumentException("Неизвестный формат данных" + format);
