@@ -5,7 +5,10 @@ import ru.stqa.addressbook.model.Group;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
+import tools.jackson.core.type.TypeReference;
+import tools.jackson.databind.ObjectMapper;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -14,22 +17,20 @@ public class GroupCreationTests extends TestBase {
 
     public static List<Group> groupProvider() {
         var result = new ArrayList<Group>();
-        for (var name : List.of("", "name")) {
-            for (var header : List.of("", "header")) {
-                for (var footer : List.of("", "footer")) {
-                    result.add(new Group()
-                            .withName(name)
-                            .withHeader(header)
-                            .withFooter(footer));
-                }
-            }
-        }
-        for (int i = 0; i < 5; i++) {
-            result.add(new Group()
-                    .withName(CommonFunctions.randomString(i * 10))
-                    .withHeader(CommonFunctions.randomString(i * 10))
-                    .withFooter(CommonFunctions.randomString(i * 10)));
-        }
+//        for (var name : List.of("", "name")) {
+//            for (var header : List.of("", "header")) {
+//                for (var footer : List.of("", "footer")) {
+//                    result.add(new Group()
+//                            .withName(name)
+//                            .withHeader(header)
+//                            .withFooter(footer));
+//                }
+//            }
+//        }
+        ObjectMapper mapper = new ObjectMapper();
+        var value = mapper.readValue(new File("groups.json"),  new TypeReference<List<Group>>(){});
+        result.addAll(value);
+        //в этом случае при изменении конструктора (т.е. при добавлении новых свойств) код в этом месте меняться не будет
         return result;
     }
 
