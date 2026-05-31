@@ -71,6 +71,7 @@ public class Generator {
                     .withPhoto(randomFile("src/test/resources/images")));
         }
         return result;
+        
     }
 
     private void save(Object data) {
