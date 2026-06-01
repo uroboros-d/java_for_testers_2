@@ -1,5 +1,6 @@
 package ru.stqa.addressbook.manager;
 
+import ru.stqa.addressbook.model.Contact;
 import ru.stqa.addressbook.model.Group;
 
 import java.sql.DriverManager;
@@ -30,5 +31,24 @@ public class JdbcHelper extends HelperBase {
             throw new RuntimeException(e);
         }
         return groups;
+    }
+
+    public List<Contact> getContactList() {
+        var contacts = new ArrayList<Contact>();
+        try (var conn = DriverManager.getConnection("jdbc:mysql://localhost/addressbook", "root", "");
+             var statement = conn.createStatement();
+             var result = statement.executeQuery(
+                     "SELECT id, firstname, lastname, address FROM addressbook")) {
+            while (result.next()) {
+                contacts.add(new Contact()
+                        .withId(result.getString("id"))
+                        .withFirstname(result.getString("firstname"))
+                        .withLastname(result.getString("lastname"))
+                        .withAddress(result.getString("address")));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return contacts;
     }
 }
