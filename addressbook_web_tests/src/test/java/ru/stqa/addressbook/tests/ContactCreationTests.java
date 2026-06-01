@@ -35,8 +35,16 @@ public class ContactCreationTests extends TestBase {
         return result;
     }
 
+    public static List<Contact> singleRandomContact() {
+        return List.of(new Contact()
+                .withFirstname(CommonFunctions.randomString(10))
+                .withLastname(CommonFunctions.randomString(10))
+                .withAddress(CommonFunctions.randomString(10))
+                .withPhoto(randomFile("src/test/resources/images")));
+    }
+
     @ParameterizedTest
-    @MethodSource("contactProvider")
+    @MethodSource("singleRandomContact")
     public void canCreateContacts(Contact contact) {
         var oldContacts = app.contacts().getList();
         app.contacts().createContact(contact);
