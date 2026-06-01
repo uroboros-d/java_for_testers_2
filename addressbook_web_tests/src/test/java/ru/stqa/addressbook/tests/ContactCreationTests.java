@@ -46,16 +46,21 @@ public class ContactCreationTests extends TestBase {
     @ParameterizedTest
     @MethodSource("singleRandomContact")
     public void canCreateContacts(Contact contact) {
-        var oldContacts = app.contacts().getList();
+        //var oldContacts = app.contacts().getList();
+        var oldContacts = app.jdbc().getContactList();
         app.contacts().createContact(contact);
-        var newContacts = app.contacts().getList();
+        //var newContacts = app.contacts().getList();
+        var newContacts = app.jdbc().getContactList();
         Comparator<Contact> compareById = (o1, o2) -> {
             return Integer.compare(Integer.parseInt(o1.id()), Integer.parseInt(o2.id()));
         };
         newContacts.sort(compareById);
+        var maxId = newContacts.get(newContacts.size() - 1).id();
         var expectedList = new ArrayList<>(oldContacts);
-        expectedList.add(contact.withId(newContacts.get(newContacts.size() - 1).id())
-                .withPhoto(""));
+        expectedList.add(contact
+                .withId(maxId)
+                //.withPhoto("")
+                );
         expectedList.sort(compareById);
         Assertions.assertEquals(expectedList, newContacts);
     }
