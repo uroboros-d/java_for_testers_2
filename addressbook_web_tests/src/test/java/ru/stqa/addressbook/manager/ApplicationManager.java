@@ -19,6 +19,8 @@ public class ApplicationManager {
 
     public JdbcHelper jdbc;
 
+    private HibernateHelper hbm;
+
     public void init(String browser) {
         if (driver == null) {
             if ("firefox".equals(browser)) {
@@ -61,6 +63,14 @@ public class ApplicationManager {
             jdbc = new JdbcHelper(this);
         }
         return jdbc;
+    }
+
+    public HibernateHelper hbm() {
+        if (hbm == null) {
+            hbm = new HibernateHelper(this);
+        }
+        //если уже проинициализирован, то внутрь if не попадаем, а сразу возвращаем ссылку на помощника
+        return hbm;
     }
 
     public boolean isElementPresent(By locator) {
