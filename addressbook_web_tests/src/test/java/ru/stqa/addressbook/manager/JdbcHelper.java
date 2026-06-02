@@ -38,13 +38,15 @@ public class JdbcHelper extends HelperBase {
         try (var conn = DriverManager.getConnection("jdbc:mysql://localhost/addressbook", "root", "");
              var statement = conn.createStatement();
              var result = statement.executeQuery(
-                     "SELECT id, firstname, lastname, address FROM addressbook")) {
+                     "SELECT id, firstname, lastname, address, photo FROM addressbook")) {
             while (result.next()) {
                 contacts.add(new Contact()
                         .withId(result.getString("id"))
                         .withFirstname(result.getString("firstname"))
                         .withLastname(result.getString("lastname"))
-                        .withAddress(result.getString("address")));
+                        .withAddress(result.getString("address"))
+                        //.withPhoto(result.getString("photo"))
+                        );
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
