@@ -50,9 +50,22 @@ public class HibernateHelper extends HelperBase {
         }));
     }
 
-    public List<Contact> getContactList() {
-        return sessionFactory.fromSession(session -> {
-            return session.createQuery("from ContactRecord", ContactRecord.class).list();
-        });
-    }
+
+//    static List<Contact> convertList(List<ContactRecord> records) {
+//        List<Contact> result = new ArrayList<>();
+//        for (var record : records) {
+//            result.add(convert(record));
+//        }
+//        return result;
+//    }
+//
+//    private static Contact convert(ContactRecord record) {
+//        return new Contact("" + record.id, record.firstname, record.lastname, record.address);
+//    }
+//
+//    public List<Contact> getContactList() {
+//        return sessionFactory.fromSession(session -> {
+//            return session.createQuery("from ContactRecord", ContactRecord.class).list();
+//        });
+//    }
 }
