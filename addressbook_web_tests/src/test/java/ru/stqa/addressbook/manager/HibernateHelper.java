@@ -3,6 +3,8 @@ package ru.stqa.addressbook.manager;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AvailableSettings;
 import org.hibernate.cfg.Configuration;
+import ru.stqa.addressbook.manager.hbm.GroupRecord;
+import ru.stqa.addressbook.model.Contact;
 import ru.stqa.addressbook.model.Group;
 
 import java.util.List;
@@ -19,7 +21,7 @@ public class HibernateHelper extends HelperBase {
         //создание фабрики сессий
         sessionFactory = new Configuration()
 //                        .addAnnotatedClass(Book.class)
-//                        .addAnnotatedClass(Author.class)
+                        .addAnnotatedClass(GroupRecord.class)
                 .setProperty(AvailableSettings.JAKARTA_JDBC_URL,
                         "jdbc:mysql://localhost/addressbook")
                 // Credentials
@@ -30,8 +32,13 @@ public class HibernateHelper extends HelperBase {
 
     public List<Group> getGroupList() {
         return sessionFactory.fromSession(session -> {
-            return session.createQuery("from Group", Group.class).list();
+            return session.createQuery("from GroupRecord", GroupRecord.class).list();
         });
+    }
 
+    public List<Contact> getContactList() {
+        return sessionFactory.fromSession(session -> {
+            return session.createQuery("from Contact", Contact.class).list();
+        });
     }
 }
