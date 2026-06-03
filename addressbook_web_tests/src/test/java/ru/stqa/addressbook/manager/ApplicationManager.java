@@ -69,7 +69,6 @@ public class ApplicationManager {
         if (hbm == null) {
             hbm = new HibernateHelper(this);
         }
-        //если уже проинициализирован, то внутрь if не попадаем, а сразу возвращаем ссылку на помощника
         return hbm;
     }
 
