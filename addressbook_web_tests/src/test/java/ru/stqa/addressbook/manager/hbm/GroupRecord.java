@@ -11,11 +11,11 @@ import jakarta.persistence.Table;
 public class GroupRecord {
     @Id
     @Column(name = "group_id")
-    int id;
+    public int id;
     @Column(name = "group_name")
-    String group_name;
+    public String name;
     @Column(name = "group_header")
-    String header;
+    public String header;
     @Column(name = "group_footer")
-    String footer;
+    public String footer;
 }

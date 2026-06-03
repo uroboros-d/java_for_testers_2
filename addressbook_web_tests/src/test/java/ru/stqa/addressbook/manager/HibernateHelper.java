@@ -7,6 +7,7 @@ import ru.stqa.addressbook.manager.hbm.GroupRecord;
 import ru.stqa.addressbook.model.Contact;
 import ru.stqa.addressbook.model.Group;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class HibernateHelper extends HelperBase {
@@ -30,10 +31,22 @@ public class HibernateHelper extends HelperBase {
                 .buildSessionFactory();
     }
 
+    static List<Group> convertList(List<GroupRecord> records) {
+        List<Group> result = new ArrayList<>();
+        for (var record : records) {
+            result.add(convert(record));
+        }
+        return result;
+    }
+
+    private static Group convert(GroupRecord record) {
+        return new Group("" + record.id, record.name, record.header, record.footer);
+    }
+
     public List<Group> getGroupList() {
-        return sessionFactory.fromSession(session -> {
+        return convertList(sessionFactory.fromSession(session -> {
             return session.createQuery("from GroupRecord", GroupRecord.class).list();
-        });
+        }));
     }
 
     public List<Contact> getContactList() {
