@@ -23,11 +23,11 @@ public class HibernateHelper extends HelperBase {
         sessionFactory = new Configuration()
 //                        .addAnnotatedClass(Book.class)
                         .addAnnotatedClass(GroupRecord.class)
-                .setProperty(AvailableSettings.JAKARTA_JDBC_URL,
+                .setProperty(AvailableSettings.URL,
                         "jdbc:mysql://localhost/addressbook")
                 // Credentials
-                .setProperty(AvailableSettings.JAKARTA_JDBC_USER, "root")
-                .setProperty(AvailableSettings.JAKARTA_JDBC_PASSWORD, "")
+                .setProperty(AvailableSettings.USER, "root")
+                .setProperty(AvailableSettings.PASS, "")
                 .buildSessionFactory();
     }
 
