@@ -25,7 +25,7 @@ public class ApplicationManager {
         if (driver == null) {
             if ("firefox".equals(browser)) {
                 driver = new FirefoxDriver();
-            } else if ("chrome".equals(browser)){
+            } else if ("chrome".equals(browser)) {
                 driver = new ChromeDriver();
             } else {
                 throw new IllegalArgumentException(String.format("Unknown browser %s", browser));
@@ -37,28 +37,28 @@ public class ApplicationManager {
         }
     }
 
-    public  LoginHelper session() {
+    public LoginHelper session() {
         if (session == null) {
             session = new LoginHelper(this);
         }
         return session;
     }
 
-    public  GroupHelper groups() {
+    public GroupHelper groups() {
         if (groups == null) {
             groups = new GroupHelper(this);
         }
         return groups;
     }
 
-    public  ContactHelper contacts() {
+    public ContactHelper contacts() {
         if (contacts == null) {
             contacts = new ContactHelper(this);
         }
         return contacts;
     }
 
-    public  JdbcHelper jdbc() {
+    public JdbcHelper jdbc() {
         if (jdbc == null) {
             jdbc = new JdbcHelper(this);
         }

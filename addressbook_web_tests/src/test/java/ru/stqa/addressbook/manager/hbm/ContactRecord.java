@@ -18,4 +18,5 @@ public class ContactRecord {
     public String lastname;
     @Column(name = "address")
     public String address;
+
 }

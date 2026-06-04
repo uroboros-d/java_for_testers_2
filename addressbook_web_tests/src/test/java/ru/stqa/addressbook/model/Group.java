@@ -3,12 +3,13 @@ package ru.stqa.addressbook.model;
 public record Group(String id, String name, String header, String footer) {
 
     public Group() {
-        this( "", "", "", "");
+        this("", "", "", "");
     }
 
     public Group withId(String id) {
         return new Group(id, this.name, this.header, this.footer);
     }
+
     public Group withName(String name) {
         return new Group(this.id, name, this.header, this.footer);
     }

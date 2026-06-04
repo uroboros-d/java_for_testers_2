@@ -22,8 +22,8 @@ public class HibernateHelper extends HelperBase {
 
         //создание фабрики сессий
         sessionFactory = new Configuration()
-                        .addAnnotatedClass(ContactRecord.class)
-                        .addAnnotatedClass(GroupRecord.class)
+                .addAnnotatedClass(ContactRecord.class)
+                .addAnnotatedClass(GroupRecord.class)
                 .setProperty(AvailableSettings.URL,
                         "jdbc:mysql://localhost/addressbook")
                 // Credentials

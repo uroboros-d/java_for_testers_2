@@ -28,7 +28,8 @@ public class GroupCreationTests extends TestBase {
 //            }
 //        }
         ObjectMapper mapper = new ObjectMapper();
-        var value = mapper.readValue(new File("groups.json"),  new TypeReference<List<Group>>(){});
+        var value = mapper.readValue(new File("groups.json"), new TypeReference<List<Group>>() {
+        });
         result.addAll(value);
         return result;
     }
@@ -83,10 +84,10 @@ public class GroupCreationTests extends TestBase {
         var maxId = newGroups.get(newGroups.size() - 1).id();
         var expectedList = new ArrayList<>(oldGroups);
         expectedList.add(group
-                .withId(maxId)
+                        .withId(maxId)
                 //.withHeader("")
                 //.withFooter("")
-                );
+        );
         expectedList.sort(compareById);
         Assertions.assertEquals(newGroups, expectedList);
     }
