@@ -47,10 +47,12 @@ public class ContactCreationTests extends TestBase {
     @MethodSource("singleRandomContact")
     public void canCreateContacts(Contact contact) {
         //var oldContacts = app.contacts().getList();
-        var oldContacts = app.jdbc().getContactList();
+        //var oldContacts = app.jdbc().getContactList();
+        var oldContacts = app.hbm().getContactList();
         app.contacts().createContact(contact);
         //var newContacts = app.contacts().getList();
-        var newContacts = app.jdbc().getContactList();
+        //var newContacts = app.jdbc().getContactList();
+        var newContacts = app.hbm().getContactList();
         Comparator<Contact> compareById = (o1, o2) -> {
             return Integer.compare(Integer.parseInt(o1.id()), Integer.parseInt(o2.id()));
         };
