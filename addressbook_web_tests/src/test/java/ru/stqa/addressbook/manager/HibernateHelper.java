@@ -32,7 +32,7 @@ public class HibernateHelper extends HelperBase {
                 .buildSessionFactory();
     }
 
-    static List<Group> convertList(List<GroupRecord> records) {
+    static List<Group> convertGroupList(List<GroupRecord> records) {
         List<Group> result = new ArrayList<>();
         for (var record : records) {
             result.add(convert(record));
@@ -45,27 +45,27 @@ public class HibernateHelper extends HelperBase {
     }
 
     public List<Group> getGroupList() {
-        return convertList(sessionFactory.fromSession(session -> {
+        return convertGroupList(sessionFactory.fromSession(session -> {
             return session.createQuery("from GroupRecord", GroupRecord.class).list();
         }));
     }
 
+    static List<Contact> convertContactList(List<ContactRecord> records) {
+        List<Contact> result = new ArrayList<>();
+        for (var record : records) {
+            result.add(convert(record));
+        }
+        return result;
+    }
 
-//    static List<Contact> convertList(List<ContactRecord> records) {
-//        List<Contact> result = new ArrayList<>();
-//        for (var record : records) {
-//            result.add(convert(record));
-//        }
-//        return result;
-//    }
-//
-//    private static Contact convert(ContactRecord record) {
-//        return new Contact("" + record.id, record.firstname, record.lastname, record.address);
-//    }
-//
-//    public List<Contact> getContactList() {
-//        return sessionFactory.fromSession(session -> {
-//            return session.createQuery("from ContactRecord", ContactRecord.class).list();
-//        });
-//    }
+    private static Contact convert(ContactRecord record) {
+        // порядок полей важно соблюсти: id, lastname, firstname, address, photo (photo в БД через Hibernate не читается)
+        return new Contact("" + record.id, record.lastname, record.firstname, record.address, "");
+    }
+
+    public List<Contact> getContactList() {
+        return convertContactList(sessionFactory.fromSession(session -> {
+            return session.createQuery("from ContactRecord", ContactRecord.class).list();
+        }));
+    }
 }
