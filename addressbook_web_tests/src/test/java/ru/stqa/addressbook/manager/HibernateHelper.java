@@ -44,6 +44,10 @@ public class HibernateHelper extends HelperBase {
         return new Group("" + record.id, record.name, record.header, record.footer);
     }
 
+    private static GroupRecord convert(Group group) {
+        return new GroupRecord(Integer.parseInt(group.id()), group.name(), group.header(), group.footer());
+    }
+
     public List<Group> getGroupList() {
         return convertGroupList(sessionFactory.fromSession(session -> {
             return session.createQuery("from GroupRecord", GroupRecord.class).list();
@@ -57,6 +61,9 @@ public class HibernateHelper extends HelperBase {
     }
 
     public void createGroup(Group group) {
+        sessionFactory.inSession(session -> {
+            session.persist(convert(Group));
+        });
     }
 
     static List<Contact> convertContactList(List<ContactRecord> records) {
