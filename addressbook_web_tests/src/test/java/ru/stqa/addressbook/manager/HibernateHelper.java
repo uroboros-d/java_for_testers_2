@@ -62,7 +62,7 @@ public class HibernateHelper extends HelperBase {
 
     public void createGroup(Group group) {
         sessionFactory.inSession(session -> {
-            session.persist(convert(Group));
+            session.persist(convert(group));
         });
     }
 
