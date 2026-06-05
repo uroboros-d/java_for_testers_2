@@ -31,10 +31,13 @@ public class GroupRemovalTests extends TestBase {
 
     @Test
     public void canRemoveAllGroupsAtOnce() {
-        if (app.groups().getCount() == 0) {
-            app.groups().createGroup(new Group());
+//        if (app.groups().getCount() == 0) {
+//            app.groups().createGroup(new Group());
+//        }
+        if (app.hbm().getGroupCount() == 0) {
+            app.hbm().createGroup(new Group());
         }
         app.groups().removeAllGroups();
-        Assertions.assertEquals(0, app.groups().getCount());
+        Assertions.assertEquals(0, app.hbm().getGroupCount());
     }
 }

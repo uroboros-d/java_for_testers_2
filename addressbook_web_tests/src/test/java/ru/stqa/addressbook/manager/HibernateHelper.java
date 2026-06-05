@@ -49,7 +49,7 @@ public class HibernateHelper extends HelperBase {
         if ("".equals(id)) {
             id = "0";
         }
-        return new GroupRecord(Integer.parseInt(group.id()), group.name(), group.header(), group.footer());
+        return new GroupRecord(Integer.parseInt(id), group.name(), group.header(), group.footer());
     }
 
     public List<Group> getGroupList() {
