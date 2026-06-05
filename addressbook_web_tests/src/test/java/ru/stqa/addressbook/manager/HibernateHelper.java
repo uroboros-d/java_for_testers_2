@@ -68,4 +68,10 @@ public class HibernateHelper extends HelperBase {
             return session.createQuery("from ContactRecord", ContactRecord.class).list();
         }));
     }
+
+    public int getGroupCount() {
+    }
+
+    public void createGroup(Group group) {
+    }
 }
