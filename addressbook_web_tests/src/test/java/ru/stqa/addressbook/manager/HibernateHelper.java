@@ -50,6 +50,15 @@ public class HibernateHelper extends HelperBase {
         }));
     }
 
+    public long getGroupCount() {
+        return sessionFactory.fromSession(session -> {
+            return session.createQuery("select count (*) from GroupRecord", Long.class).getSingleResult();
+        });
+    }
+
+    public void createGroup(Group group) {
+    }
+
     static List<Contact> convertContactList(List<ContactRecord> records) {
         List<Contact> result = new ArrayList<>();
         for (var record : records) {
@@ -69,9 +78,5 @@ public class HibernateHelper extends HelperBase {
         }));
     }
 
-    public int getGroupCount() {
-    }
 
-    public void createGroup(Group group) {
-    }
 }
